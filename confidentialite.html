@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="theme-color" name="theme-color" content="#F0E9D8">
+<script>
+  // Thème initial : clair par défaut, le choix explicite du visiteur prime.
+  (function(){
+    var choix = null;
+    try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
+    if(choix === 'dark'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+    }
+  })();
+</script>
+<title>Politique de confidentialité, Graine de Culture</title>
+<meta name="description" content="Graine de Culture ne collecte aucune donnée personnelle : pas de compte, pas de publicité, pas de traceur. Tout reste sur votre appareil.">
+<link rel="canonical" href="https://grainedeculture.ch/confidentialite">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Graine de Culture">
+<meta property="og:title" content="Politique de confidentialité, Graine de Culture">
+<meta property="og:description" content="Graine de Culture ne collecte aucune donnée personnelle : pas de compte, pas de publicité, pas de traceur. Tout reste sur votre appareil.">
+<meta property="og:url" content="https://grainedeculture.ch/confidentialite">
+<meta property="og:image" content="https://grainedeculture.ch/og.png">
+<meta property="og:locale" content="fr_CH">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script async src="https://plausible.io/js/pa-My6-c-kju4-RD9LAgIVRF.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<a class="acces" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <div class="barre-in">
+    <a class="logo" href="/" aria-label="Graine de Culture, accueil">
+      <img src="/emblem.svg" alt="" width="26" height="26">
+      <span>Graine de Culture</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="/decouvrir">L'application</a>
+      <a class="masq" href="/#categories">Les catégories</a>
+      <a class="masq" href="/#methode">La méthode</a>
+      <a class="masq2" href="/#questions">Questions</a>
+      <a href="/a-propos">À propos</a>
+      <a class="obtenir masq2" href="/#obtenir">Obtenir</a>
+      <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
+        <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="page" id="contenu" tabindex="-1">
+  <a class="retour" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Retour à l'accueil
+  </a>
+  <div class="filet gauche" style="margin-top:26px"></div>
+  <h1>Politique de confidentialité</h1>
+  <p class="maj">Dernière mise à jour&nbsp;: 19 juillet 2026</p>
+
+  <p class="lead">Graine de Culture est pensée pour respecter votre vie privée. L'application ne demande aucun compte, n'affiche aucune publicité et n'utilise aucun traceur. Cette page explique simplement quelles données sont concernées, et comment.</p>
+
+  <h2>Aucune donnée personnelle collectée</h2>
+  <p>L'application ne collecte, ne transmet et ne revend aucune donnée personnelle. Elle n'intègre aucun outil de suivi publicitaire ni aucun service d'analyse comportementale. Ce point est déclaré dans la fiche de confidentialité de l'app sur l'App Store et dans la section Sécurité des données du Google Play Store&nbsp;: aucune donnée n'est liée à votre identité, et aucun suivi n'est effectué.</p>
+
+  <h2>Ce qui reste sur votre appareil</h2>
+  <p>Pour fonctionner, l'application enregistre certaines informations <strong>uniquement en local, sur votre appareil</strong>, sans jamais les envoyer au développeur&nbsp;:</p>
+  <ul>
+    <li>votre progression, vos favoris et votre historique de découvertes&nbsp;;</li>
+    <li>vos préférences (thème clair ou sombre, rappels)&nbsp;;</li>
+    <li>le décompte de votre essai gratuit par catégorie.</li>
+  </ul>
+  <p>Sur iOS, ces données ne quittent jamais votre téléphone. Sur Android, si vous avez activé la sauvegarde Google, elles sont incluses dans la sauvegarde de votre appareil, comme celles des autres applications, et servent uniquement à vous les restituer lors d'une réinstallation. Elles disparaissent lorsque vous réinitialisez votre progression depuis l'app, ou lorsque vous désinstallez l'application.</p>
+
+  <h2>Connexions à des services tiers</h2>
+  <p>Certaines fonctions nécessitent une connexion à des services extérieurs. Ces requêtes transmettent des informations techniques (comme l'adresse IP de l'appareil) au service concerné, mais aucune donnée personnelle au développeur&nbsp;:</p>
+  <ul>
+    <li><strong>Images des fiches</strong>&nbsp;: elles proviennent de Wikimédia. L'affichage d'une image établit une connexion à leurs serveurs, soumise à la <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy" target="_blank" rel="noopener">politique de confidentialité de Wikimédia</a>.</li>
+    <li><strong>Achats</strong>&nbsp;: les achats intégrés sont entièrement gérés par Apple sur iOS et par Google Play sur Android, selon la <a href="https://www.apple.com/legal/privacy/fr-ww/" target="_blank" rel="noopener">politique de confidentialité d'Apple</a> ou <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">celle de Google</a>. Le développeur ne reçoit aucune coordonnée bancaire.</li>
+    <li><strong>Vérification de mise à jour (iOS uniquement)</strong>&nbsp;: l'application interroge l'API publique de l'App Store pour signaler une nouvelle version disponible. Cette requête est traitée par Apple.</li>
+  </ul>
+
+  <h2>Notifications</h2>
+  <p>Les rappels quotidiens sont des notifications <strong>locales</strong>, planifiées directement sur votre appareil. Elles ne reposent sur aucun serveur et n'envoient aucune information. Vous pouvez les activer ou les désactiver à tout moment dans l'application.</p>
+
+  <h2>Le site grainedeculture.ch</h2>
+  <p>Ce site utilise <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">Plausible Analytics</a>, une mesure d'audience respectueuse de la vie privée&nbsp;: sans cookies, sans collecte de données personnelles et sans identifiant individuel. Les statistiques produites sont agrégées et anonymes, et servent uniquement à connaître la fréquentation générale des pages.</p>
+
+  <h2>Pas de partage ni de vente</h2>
+  <p>Aucune donnée n'est partagée, vendue ou cédée à des tiers à des fins commerciales ou publicitaires.</p>
+
+  <h2>Enfants</h2>
+  <p>L'application convient à tous les publics. Ne collectant aucune donnée personnelle, elle ne traite aucune information relative aux enfants.</p>
+
+  <h2>Vos droits</h2>
+  <p>L'application relève du droit suisse (nLPD) et, le cas échéant, du Règlement général sur la protection des données (RGPD). Comme aucune donnée personnelle n'est conservée par le développeur, il n'existe aucun profil à consulter, corriger ou supprimer de son côté. Les données enregistrées localement se suppriment en réinitialisant votre progression ou en désinstallant l'application. Pour toute question, vous pouvez écrire à l'adresse ci-dessous.</p>
+
+  <h2>Modifications</h2>
+  <p>Cette politique peut évoluer si l'application change. La date de dernière mise à jour, en haut de cette page, indique la version en vigueur.</p>
+
+  <h2>Contact</h2>
+  <p>Graine de Culture est développée et maintenue en Suisse par Arnaud Clavien. Pour toute question relative à la confidentialité&nbsp;: <a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch</a>.</p>
+</main>
+
+<footer>
+  Conçue et développée en Suisse par Arnaud Clavien.
+  <nav aria-label="Pages du site">
+    <a href="/decouvrir">L'application</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/a-propos">À propos</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/confidentialite">Confidentialité</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/cgu">CGU</a>
+  </nav>
+</footer>
+
+</body>
+</html>

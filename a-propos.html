@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="theme-color" name="theme-color" content="#F0E9D8">
+<script>
+  // Thème initial : clair par défaut, le choix explicite du visiteur prime.
+  (function(){
+    var choix = null;
+    try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
+    if(choix === 'dark'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+    }
+  })();
+</script>
+<title>Arnaud Clavien, créateur de Graine de Culture</title>
+<meta name="description" content="Arnaud Clavien, éducateur social suisse, est le créateur de l'application Graine de Culture : chaque jour une pépite de savoir, mot oublié, biais cognitif ou tournant de l'Histoire.">
+<link rel="canonical" href="https://grainedeculture.ch/a-propos">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="robots" content="index,follow">
+<meta property="profile:first_name" content="Arnaud">
+<meta property="profile:last_name" content="Clavien">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://grainedeculture.ch/a-propos#arnaud-clavien",
+      "name": "Arnaud Clavien",
+      "givenName": "Arnaud",
+      "familyName": "Clavien",
+      "jobTitle": "Éducateur social",
+      "nationality": "CH",
+      "description": "Éducateur social suisse, passionné par la psychologie, l'Histoire, la linguistique et la transmission de la culture. Créateur de l'application Graine de Culture.",
+      "image": "https://grainedeculture.ch/arnaud-clavien.jpg",
+      "url": "https://grainedeculture.ch/a-propos",
+      "mainEntityOfPage": "https://grainedeculture.ch/a-propos"
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Graine de Culture",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "EducationApplication",
+      "url": "https://grainedeculture.ch",
+      "installUrl": "https://apps.apple.com/fr/app/graine-de-culture/id6761060784",
+      "creator": { "@id": "https://grainedeculture.ch/a-propos#arnaud-clavien" },
+      "author": { "@id": "https://grainedeculture.ch/a-propos#arnaud-clavien" },
+      "sameAs": [
+        "https://apps.apple.com/fr/app/graine-de-culture/id6761060784",
+        "https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture",
+        "https://www.instagram.com/grainedeculturee",
+        "https://www.tiktok.com/@graine.de.culture"
+      ]
+    }
+  ]
+}
+</script>
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Graine de Culture">
+<meta property="og:title" content="Arnaud Clavien, créateur de Graine de Culture">
+<meta property="og:description" content="Arnaud Clavien, éducateur social suisse, est le créateur de l'application Graine de Culture : chaque jour une pépite de savoir, mot oublié, biais cognitif ou tournant de l'Histoire.">
+<meta property="og:url" content="https://grainedeculture.ch/a-propos">
+<meta property="og:image" content="https://grainedeculture.ch/arnaud-clavien.jpg">
+<meta property="og:locale" content="fr_CH">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script async src="https://plausible.io/js/pa-My6-c-kju4-RD9LAgIVRF.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<a class="acces" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <div class="barre-in">
+    <a class="logo" href="/" aria-label="Graine de Culture, accueil">
+      <img src="/emblem.svg" alt="" width="26" height="26">
+      <span>Graine de Culture</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="/decouvrir">L'application</a>
+      <a class="masq" href="/#categories">Les catégories</a>
+      <a class="masq" href="/#methode">La méthode</a>
+      <a class="masq2" href="/#questions">Questions</a>
+      <a href="/a-propos" aria-current="page">À propos</a>
+      <a class="obtenir masq2" href="/#obtenir">Obtenir</a>
+      <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
+        <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="page" id="contenu" tabindex="-1">
+  <a class="retour" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Retour à l'accueil
+  </a>
+  <div class="filet gauche" style="margin-top:26px"></div>
+  <img class="portrait" src="/arnaud-clavien.jpg" width="132" height="132"
+       alt="Arnaud Clavien, créateur de l'application Graine de Culture">
+  <h1>Arnaud Clavien</h1>
+  <p class="maj" style="text-transform:uppercase; letter-spacing:.05em; font-weight:600; margin-bottom:24px">Créateur de Graine de Culture</p>
+
+  <p class="lead"><strong>Arnaud Clavien</strong> est éducateur social, passionné par la psychologie, l'Histoire, la linguistique et la transmission de la culture au quotidien.</p>
+
+  <p><strong>Graine de Culture</strong> est née d'une envie simple&nbsp;: offrir chaque jour une petite pépite de savoir, un mot oublié, un biais cognitif ou un tournant de l'Histoire, pour cultiver la curiosité sans effort.</p>
+
+  <p>L'application est conçue, développée et maintenue en Suisse. Elle ne collecte aucune donnée, n'affiche aucune publicité et ne repose sur aucun abonnement.</p>
+
+  <div class="actions" style="justify-content:flex-start">
+    <a class="bouton" href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+      App Store
+    </a>
+    <a class="bouton" href="https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.9 2.3a1 1 0 0 0-.5.9v17.6a1 1 0 0 0 .5.9l9.3-9.7L3.9 2.3zm10.1 10.6 2.6 2.6-9.5 5.4 6.9-8zm3.6-4 3.1 1.8c.9.5.9 1.9 0 2.4l-3.1 1.8-2.8-2.9 2.8-2.9zM7.1 3.3l9.5 5.4-2.6 2.6L7.1 3.3z"/></svg>
+      Google Play
+    </a>
+    <a class="bouton creux" href="/decouvrir">Voir les écrans</a>
+  </div>
+
+  <h2>Une question&nbsp;?</h2>
+  <ul class="liens">
+    <li><a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch <span class="fleche-l">&rsaquo;</span></a></li>
+  </ul>
+
+  <h2>Suivre en vidéo</h2>
+  <p>Instagram et TikTok ne sont pas des guichets de contact&nbsp;: ce sont deux vitrines, où les découvertes se racontent face caméra.</p>
+  <ul class="liens">
+    <li><a href="https://www.instagram.com/grainedeculturee" target="_blank" rel="noopener">Instagram <span class="fleche-l">&rsaquo;</span></a></li>
+    <li><a href="https://www.tiktok.com/@graine.de.culture" target="_blank" rel="noopener">TikTok <span class="fleche-l">&rsaquo;</span></a></li>
+  </ul>
+
+  <h2>Soutenir le projet</h2>
+  <ul class="liens">
+    <li><a href="https://ko-fi.com/grainedeculture" target="_blank" rel="noopener" data-plausible-event-name="kofi-click">Offrir un café au développeur <span class="fleche-l">&rsaquo;</span></a></li>
+  </ul>
+</main>
+
+<footer>
+  Conçue et développée en Suisse par Arnaud Clavien.
+  <nav aria-label="Pages du site">
+    <a href="/decouvrir">L'application</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/a-propos">À propos</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/confidentialite">Confidentialité</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/cgu">CGU</a>
+  </nav>
+</footer>
+
+</body>
+</html>

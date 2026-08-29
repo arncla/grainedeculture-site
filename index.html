@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="theme-color" name="theme-color" content="#F0E9D8">
+<script>
+  // Thème initial : clair par défaut, le choix explicite du visiteur prime.
+  (function(){
+    var choix = null;
+    try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
+    if(choix === 'dark'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+    }
+  })();
+</script>
+<title>Graine de Culture, une graine de savoir chaque jour</title>
+<meta name="description" content="Une découverte culturelle par jour, en treize catégories, sous forme de fiche éditoriale sourcée. 5 052 fiches rassemblées. Application iOS et Android, sans compte, sans publicité, sans abonnement.">
+<link rel="canonical" href="https://grainedeculture.ch/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Graine de Culture">
+<meta property="og:title" content="Graine de Culture, une graine de savoir chaque jour">
+<meta property="og:description" content="Une découverte culturelle par jour, en treize catégories, sous forme de fiche éditoriale sourcée. Application iOS et Android.">
+<meta property="og:url" content="https://grainedeculture.ch/">
+<meta property="og:image" content="https://grainedeculture.ch/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graine de Culture, une graine de savoir chaque jour">
+<meta name="twitter:description" content="Une découverte culturelle par jour, en treize catégories, sous forme de fiche éditoriale sourcée.">
+<meta name="twitter:image" content="https://grainedeculture.ch/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Graine de Culture","operatingSystem":"iOS, Android","applicationCategory":"EducationApplication","url":"https://grainedeculture.ch/","downloadUrl":"https://apps.apple.com/fr/app/graine-de-culture/id6761060784","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"CHF"}}
+</script>
+<!-- Mesure d'audience sans cookie, Plausible -->
+<script async src="https://plausible.io/js/pa-My6-c-kju4-RD9LAgIVRF.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<a class="acces" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <div class="barre-in">
+    <a class="logo" href="/" aria-label="Graine de Culture, accueil">
+      <img src="/emblem.svg" alt="" width="26" height="26">
+      <span>Graine de Culture</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="/decouvrir">L'application</a>
+      <a class="masq" href="#categories">Les catégories</a>
+      <a class="masq" href="#methode">La méthode</a>
+      <a class="masq2" href="#questions">Questions</a>
+      <a href="/a-propos">À propos</a>
+      <a class="obtenir masq2" href="#obtenir">Obtenir</a>
+      <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
+        <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+
+<section class="bande hero">
+  <div class="hero-grille">
+    <div>
+      <img class="hero-emblem flotte" src="/emblem.svg" alt="" width="62" height="62">
+      <h1 class="anim">Graine de Culture</h1>
+      <p class="lede anim d1">Une graine de savoir, chaque jour.</p>
+      <p class="sous anim d1">Chaque jour, une découverte présentée comme une fiche éditoriale. Rassemblée, vérifiée et rattachée à sa source.</p>
+      <ul class="points anim d2">
+        <li>Treize catégories, du mot oublié au biais cognitif</li>
+        <li>5&nbsp;052 fiches déjà rassemblées, embarquées dans l'application</li>
+        <li>Une source citée et cliquable, ou l'aveu qu'il n'y en a pas</li>
+        <li>Sans compte, sans publicité, sans abonnement</li>
+      </ul>
+      <div class="actions anim d3">
+        <a class="bouton" href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          App Store
+        </a>
+        <a class="bouton" href="https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.9 2.3a1 1 0 0 0-.5.9v17.6a1 1 0 0 0 .5.9l9.3-9.7L3.9 2.3zm10.1 10.6 2.6 2.6-9.5 5.4 6.9-8zm3.6-4 3.1 1.8c.9.5.9 1.9 0 2.4l-3.1 1.8-2.8-2.9 2.8-2.9zM7.1 3.3l9.5 5.4-2.6 2.6L7.1 3.3z"/></svg>
+          Google Play
+        </a>
+        <a class="bouton creux" href="/decouvrir">Voir l'application</a>
+      </div>
+      <p class="fin anim d3">La première catégorie est gratuite et sans limite. Les autres s'achètent une fois, sans abonnement.</p>
+    </div>
+    <div class="zoom d1">
+      <div class="tel"><img src="/captures/ios-accueil.webp" alt="Écran d'accueil de Graine de Culture" width="750" height="1630" fetchpriority="high"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bande claire">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Une fiche par jour.<br>Pas un fil sans fin.</h2>
+    <p class="sous anim d1">Le temps d'une pause, une seule chose à lire, et elle est terminée quand vous fermez l'application.</p>
+  </div>
+
+  <div class="galerie">
+    <div class="piste" tabindex="0" role="region" aria-label="Galerie des écrans de l'application">
+      <figure class="vue zoom">
+        <div class="tel"><img src="/captures/ios-accueil.webp" alt="Écran Accueil" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>Accueil</b>La découverte du jour, puis les treize catégories à explorer.</figcaption>
+      </figure>
+      <figure class="vue zoom d1">
+        <div class="tel"><img src="/captures/ios-fiche.webp" alt="Une fiche du Mot Oublié" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>La fiche</b>Un titre, une définition, un exemple. Le reste attend dans le repli.</figcaption>
+      </figure>
+      <figure class="vue zoom d2">
+        <div class="tel"><img src="/captures/ios-idee-recue.webp" alt="Une fiche de L'Idée Reçue, avec sa ligne Source" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>La source</b>Le lien ouvre le document consulté, et la coquille se signale d'un geste.</figcaption>
+      </figure>
+      <figure class="vue zoom d3">
+        <div class="tel"><img src="/captures/ios-biais-cognitif.webp" alt="Une fiche du Biais Cognitif" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>Treize registres</b>Chaque catégorie a sa couleur, son ton et sa structure de fiche.</figcaption>
+      </figure>
+      <figure class="vue zoom d3">
+        <div class="tel"><img src="/captures/ios-ce-jour-la.webp" alt="Une fiche de Ce jour-là" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>Ce jour-là</b>L'événement survenu à cette date, et l'entrée vers sa propre date de naissance.</figcaption>
+      </figure>
+      <figure class="vue zoom d3">
+        <div class="tel"><img src="/captures/ios-recherche.webp" alt="Écran de recherche, résultats groupés par catégorie" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>Recherche</b>Un mot, et toutes les fiches qui le contiennent, groupées par catégorie.</figcaption>
+      </figure>
+    </div>
+    <div class="fleches">
+      <button class="fleche prec" type="button" aria-label="Voir les écrans précédents">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="fleche suiv" type="button" aria-label="Voir les écrans suivants">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="centre">
+    <div class="actions anim">
+      <a class="bouton creux" href="/decouvrir">Parcourir l'application écran par écran</a>
+    </div>
+  </div>
+</section>
+
+<section class="bande nuit">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Vérifié, jamais approximatif.</h2>
+    <p class="sous anim d1">Une fiche courte se lit en une minute et se retient longtemps. Elle ne vaut donc que si elle est juste. Chaque affirmation est rattachée au document réellement consulté, et le lien pointe vers ce document, pas vers une page voisine.</p>
+    <div class="chiffres">
+      <div class="chiffre anim"><div class="n">5&nbsp;052</div><p>fiches rassemblées et embarquées dans l'application</p></div>
+      <div class="chiffre anim d1"><div class="n">13</div><p>catégories, du mot oublié au récit rocambolesque</p></div>
+      <div class="chiffre anim d2"><div class="n">0</div><p>donnée personnelle collectée, aucune exception</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bande" id="methode">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Une source, ou rien.</h2>
+    <p class="sous anim d1">Quand une source vérifiable existe, elle est citée et cliquable. Quand elle n'existe pas, l'application le dit. Il n'y a pas de troisième cas, et surtout pas de fausse précision.</p>
+  </div>
+  <div class="centre">
+    <div class="colonnes">
+      <div class="anim">
+        <h3>Source connue</h3>
+        <p>Dictionnaire, revue, institution ou musée. Le lien ouvre le document consulté, jamais une page approchante choisie à la place.</p>
+      </div>
+      <div class="anim d1">
+        <h3>Création originale</h3>
+        <p>L'Uchronie Quotidienne et Le Monde Parallèle sont des fictions assumées. Elles sont signalées comme telles, on joue avec l'histoire, on ne la réécrit pas.</p>
+      </div>
+      <div class="anim d2">
+        <h3>Sans source</h3>
+        <p>Quelques dizaines de fiches restent en texte seul, faute de source en ligne fiable. L'application l'écrit plutôt que d'inventer une référence.</p>
+      </div>
+    </div>
+    <div class="texte">
+      <div class="encart anim">
+        <h3>Une erreur&nbsp;?</h3>
+        <p>Chaque fiche porte un bouton «&nbsp;Signaler une coquille&nbsp;». Les signalements sont lus, et les corrections arrivent avec les mises à jour.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bande claire" id="categories">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Treize catégories.</h2>
+    <p class="sous anim d1">Une seule est gratuite et sans limite. Les douze autres offrent dix découvertes, le temps de voir si le registre vous parle.</p>
+    <div class="categories">
+      <div class="cat libre anim" style="--cat-clair:#5B6440; --cat-sombre:#616B44"><span class="pastille"></span><div><b>Le Mot Oublié</b><span>Un mot rare ou tombé en désuétude, et sa définition.</span><i>Gratuit, sans limite</i></div></div>
+      <div class="cat anim" style="--cat-clair:#73302A; --cat-sombre:#AA473E"><span class="pastille"></span><div><b>L'Idée Reçue</b><span>Une croyance répandue passée au crible, pour révéler le vrai derrière le mythe.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#26665F; --cat-sombre:#2A726A"><span class="pastille"></span><div><b>La Vérité Surprenante</b><span>Un fait parfaitement avéré, et pourtant contre-intuitif au point de surprendre.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#945226; --cat-sombre:#995527"><span class="pastille"></span><div><b>Le Pourquoi du Comment</b><span>L'origine ou le mécanisme caché d'une chose banale du quotidien.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#394273; --cat-sombre:#5561AA"><span class="pastille"></span><div><b>L'Effet Papillon</b><span>Comment une cause minuscule a fini par entraîner une immense conséquence.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#1F283E; --cat-sombre:#4F669B"><span class="pastille"></span><div><b>Ce jour-là</b><span>Un événement marquant survenu à cette date précise, à travers l'histoire.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#58395A; --cat-sombre:#845688"><span class="pastille"></span><div><b>Le Biais Cognitif</b><span>Un travers de raisonnement décortiqué, pour mieux le repérer chez soi.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#3D4A62; --cat-sombre:#546789"><span class="pastille"></span><div><b>L'Uchronie Quotidienne</b><span>Et si l'histoire avait bifurqué&nbsp;? Un scénario alternatif plausible, déroulé pas à pas.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#714A31; --cat-sombre:#8C5B3D"><span class="pastille"></span><div><b>L'Objet d'Antan</b><span>Un objet du passé, son usage oublié et la petite histoire qui va avec.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#275B4A; --cat-sombre:#30725C"><span class="pastille"></span><div><b>Le Monde Parallèle</b><span>Une réalité, une coutume ou une espèce si étrange qu'elle semble venir d'ailleurs.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#5A3043; --cat-sombre:#974F70"><span class="pastille"></span><div><b>La Coutume Décodée</b><span>L'origine et le sens réels d'un rite que l'on perpétue sans savoir pourquoi.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#33585A; --cat-sombre:#3F6D71"><span class="pastille"></span><div><b>La Fausse Bonne Idée</b><span>Une idée séduisante en apparence, dont l'histoire a montré les revers.</span></div></div>
+      <div class="cat anim" style="--cat-clair:#393058; --cat-sombre:#6D5BA6"><span class="pastille"></span><div><b>Le Récit Rocambolesque</b><span>Une histoire vraie si invraisemblable qu'on la croirait inventée, en format long.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bande">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Payer une fois, ou pas du tout.</h2>
+    <p class="sous anim d1">Le Mot Oublié est gratuit et sans limite. Chaque autre catégorie s'ouvre pour 1,50&nbsp;CHF, une fois, définitivement. Une offre groupée réunit toutes les catégories, présentes et à venir.</p>
+    <div class="colonnes">
+      <div class="anim">
+        <h3>Aucun abonnement</h3>
+        <p>Les achats sont non consommables&nbsp;: ce qui est débloqué le reste, sur tous vos appareils liés au même compte, sans renouvellement.</p>
+      </div>
+      <div class="anim d1">
+        <h3>Aucune publicité</h3>
+        <p>Ni bannière, ni contenu sponsorisé, ni recommandation payée. La seule chose qui finance l'application est ce que vous décidez d'acheter.</p>
+      </div>
+      <div class="anim d2">
+        <h3>Aucune pression</h3>
+        <p>Le prix apparaît au moment où l'essai s'épuise, une fois, sans compte à rebours ni promotion permanente. Puis on n'en reparle plus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bande claire">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Ce que vous lisez reste chez vous.</h2>
+    <p class="sous anim d1">Pas de compte à créer, pas de serveur, pas de traqueur. Votre progression, vos favoris et vos rappels sont enregistrés sur l'appareil, et rien de tout cela ne remonte au développeur.</p>
+    <div class="texte">
+      <div class="encart anim d1">
+        <h3>Les seules connexions sortantes</h3>
+        <p>Les images des fiches viennent de Wikimédia, les achats passent par Apple ou Google, et l'app iOS interroge l'App Store pour signaler une nouvelle version. Rien d'autre ne sort, et rien ne vous identifie.</p>
+        <p>Les rappels quotidiens sont des notifications locales, planifiées sur l'appareil, sans aucun serveur.</p>
+      </div>
+    </div>
+    <div class="actions anim d2">
+      <a class="bouton creux" href="/confidentialite">Lire la politique de confidentialité</a>
+    </div>
+  </div>
+</section>
+
+<section class="bande" id="questions">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Questions fréquentes.</h2>
+    <div class="faq">
+      <details class="anim">
+        <summary>Faut-il créer un compte&nbsp;?</summary>
+        <div class="rep"><p>Non. L'application ne demande ni adresse e-mail, ni numéro de téléphone, ni inscription. Elle fonctionne dès l'ouverture.</p></div>
+      </details>
+      <details class="anim">
+        <summary>Est-ce un abonnement&nbsp;?</summary>
+        <div class="rep">
+          <p>Non, et il n'y en aura pas. Le Mot Oublié est gratuit sans limite. Chaque autre catégorie s'achète une fois, pour 1,50&nbsp;CHF, et reste débloquée. Une offre groupée ouvre toutes les catégories, y compris celles qui seront ajoutées plus tard.</p>
+          <p>Les paiements sont traités par Apple ou par Google. Le développeur ne reçoit aucune coordonnée bancaire.</p>
+        </div>
+      </details>
+      <details class="anim">
+        <summary>D'où viennent les contenus&nbsp;?</summary>
+        <div class="rep">
+          <p>Ils sont rassemblés par Arnaud Clavien, puis rattachés à leur source&nbsp;: dictionnaires de référence, travaux scientifiques, institutions, musées, archives. La ligne «&nbsp;Source&nbsp;» de la fiche pointe vers le document réellement consulté.</p>
+          <p>Deux catégories, L'Uchronie Quotidienne et Le Monde Parallèle, sont des créations originales. Elles sont signalées comme telles dans la fiche.</p>
+        </div>
+      </details>
+      <details class="anim">
+        <summary>Que deviennent mes données&nbsp;?</summary>
+        <div class="rep">
+          <p>Elles restent sur votre appareil. Progression, favoris, historique, préférences et rappels sont enregistrés en local, et ne sont jamais transmis au développeur. Il n'y a ni compte, ni serveur, ni traqueur publicitaire.</p>
+          <p>Vous pouvez tout effacer depuis les réglages de l'application, à tout moment.</p>
+        </div>
+      </details>
+      <details class="anim">
+        <summary>Faut-il une connexion internet&nbsp;?</summary>
+        <div class="rep"><p>Non pour lire. Les 5&nbsp;052 fiches sont embarquées dans l'application. Une connexion ne sert qu'à afficher l'image d'une fiche, ouvrir un lien de source ou effectuer un achat.</p></div>
+      </details>
+      <details class="anim">
+        <summary>L'application existe-t-elle sur Android&nbsp;?</summary>
+        <div class="rep"><p>Oui. La version Android est disponible sur Google Play depuis août 2026, avec le même contenu et le même modèle que la version iPhone.</p></div>
+      </details>
+      <details class="anim">
+        <summary>Y a-t-il un widget ou une app Apple Watch&nbsp;?</summary>
+        <div class="rep"><p>Les deux. Un widget d'écran d'accueil, sur iPhone comme sur Android, affiche la découverte du jour dans la catégorie de votre choix. L'application Apple Watch reprend la carte du jour au poignet.</p></div>
+      </details>
+      <details class="anim">
+        <summary>J'ai repéré une erreur, que faire&nbsp;?</summary>
+        <div class="rep"><p>Utilisez le bouton «&nbsp;Signaler une coquille&nbsp;» au bas de la fiche concernée, ou écrivez à <a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch</a>. Chaque signalement est lu.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="bande claire courte" id="obtenir">
+  <div class="centre">
+    <img class="hero-emblem anim" src="/emblem.svg" alt="" width="62" height="62" style="margin:0 auto 20px">
+    <h2 class="anim">Une graine, aujourd'hui.</h2>
+    <p class="sous anim d1">Sur iPhone et sur Android. Le Mot Oublié est gratuit, sans limite et sans compte.</p>
+    <div class="actions anim d2">
+      <a class="bouton" href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        App Store
+      </a>
+      <a class="bouton" href="https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.9 2.3a1 1 0 0 0-.5.9v17.6a1 1 0 0 0 .5.9l9.3-9.7L3.9 2.3zm10.1 10.6 2.6 2.6-9.5 5.4 6.9-8zm3.6-4 3.1 1.8c.9.5.9 1.9 0 2.4l-3.1 1.8-2.8-2.9 2.8-2.9zM7.1 3.3l9.5 5.4-2.6 2.6L7.1 3.3z"/></svg>
+        Google Play
+      </a>
+      <a class="bouton creux" href="https://ko-fi.com/grainedeculture" target="_blank" rel="noopener" data-plausible-event-name="kofi-click">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V5z"/><path d="M17 7h1.6a2.9 2.9 0 0 1 0 5.8H17"/><path d="M4 21h13"/></svg>
+        Offrir un café
+      </a>
+    </div>
+    <p class="fin anim d3">Une question&nbsp;? <a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Conçue et développée en Suisse par Arnaud Clavien.
+  <nav aria-label="Pages du site">
+    <a href="/decouvrir">L'application</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/a-propos">À propos</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/confidentialite">Confidentialité</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/cgu">CGU</a>
+  </nav>
+</footer>
+
+</body>
+</html>

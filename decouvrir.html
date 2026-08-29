@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="theme-color" name="theme-color" content="#F0E9D8">
+<script>
+  // Thème initial : clair par défaut, le choix explicite du visiteur prime.
+  (function(){
+    var choix = null;
+    try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
+    if(choix === 'dark'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+    }
+  })();
+</script>
+<title>L'application Graine de Culture, écran par écran</title>
+<meta name="description" content="À quoi ressemble Graine de Culture : l'accueil, la fiche du jour, les treize catégories, les favoris, la page Sources et méthode.">
+<link rel="canonical" href="https://grainedeculture.ch/decouvrir">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Graine de Culture">
+<meta property="og:title" content="L'application Graine de Culture, écran par écran">
+<meta property="og:description" content="À quoi ressemble Graine de Culture : l'accueil, la fiche du jour, les treize catégories, les favoris.">
+<meta property="og:url" content="https://grainedeculture.ch/decouvrir">
+<meta property="og:image" content="https://grainedeculture.ch/og.png">
+<meta property="og:locale" content="fr_CH">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script async src="https://plausible.io/js/pa-My6-c-kju4-RD9LAgIVRF.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<a class="acces" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <div class="barre-in">
+    <a class="logo" href="/" aria-label="Graine de Culture, accueil">
+      <img src="/emblem.svg" alt="" width="26" height="26">
+      <span>Graine de Culture</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="/decouvrir" aria-current="page">L'application</a>
+      <a class="masq" href="/#categories">Les catégories</a>
+      <a class="masq" href="/#methode">La méthode</a>
+      <a class="masq2" href="/#questions">Questions</a>
+      <a href="/a-propos">À propos</a>
+      <a class="obtenir masq2" href="/#obtenir">Obtenir</a>
+      <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
+        <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+
+<section class="bande courte">
+  <div class="centre">
+    <a class="retour" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      Retour à l'accueil
+    </a>
+    <div class="filet" style="margin-top:26px"></div>
+    <h1 class="anim" style="font-size:clamp(38px,6vw,68px)">Écran par écran.</h1>
+    <p class="sous anim d1">Aucune mise en scène&nbsp;: ce sont les écrans de l'application, tels qu'ils s'affichent sur un iPhone.</p>
+  </div>
+</section>
+
+<section class="bande claire courte">
+  <div class="centre">
+    <h2 class="anim">Le premier lancement.</h2>
+    <p class="sous anim d1">Deux écrans, pas de questionnaire, pas de compte. On annonce ce que fait l'application, et d'où viennent ses contenus.</p>
+  </div>
+</section>
+
+<section class="bande">
+  <div class="centre">
+    <h2 class="anim">L'accueil.</h2>
+    <p class="sous anim d1">La découverte du jour en vedette, puis la grille des treize catégories. Une recherche traverse l'ensemble des fiches, y compris celles des jours passés.</p>
+  </div>
+  <div class="paire">
+    <div class="tel zoom"><img src="/captures/ios-accueil.webp" alt="Écran d'accueil, découverte du jour et grille des catégories" loading="lazy" width="750" height="1630"></div>
+    <div class="tel zoom d2"><img src="/captures/ios-recherche.webp" alt="Écran de recherche, résultats groupés par catégorie" loading="lazy" width="750" height="1630"></div>
+  </div>
+</section>
+
+<section class="bande claire">
+  <div class="centre">
+    <h2 class="anim">La fiche.</h2>
+    <p class="sous anim d1">Un titre, une définition courte, un exemple. L'approfondissement, les métadonnées et la source attendent dans le repli «&nbsp;En savoir plus&nbsp;», pour ceux qui veulent creuser.</p>
+  </div>
+  <div class="paire">
+    <div class="tel zoom"><img src="/captures/ios-fiche.webp" alt="Une fiche du Mot Oublié, repli fermé" loading="lazy" width="750" height="1630"></div>
+    <div class="tel zoom d2"><img src="/captures/ios-idee-recue.webp" alt="Une fiche de L'Idée Reçue, déployée, avec sa ligne Source" loading="lazy" width="750" height="1630"></div>
+  </div>
+  <div class="centre">
+    <p class="fin anim">À gauche le repli fermé, à droite une fiche déployée. La ligne «&nbsp;Source&nbsp;» ouvre le document réellement consulté, et le bouton «&nbsp;Découvrir&nbsp;» tire la fiche suivante de la catégorie.</p>
+  </div>
+</section>
+
+<section class="bande">
+  <div class="centre">
+    <h2 class="anim">Treize registres.</h2>
+    <p class="sous anim d1">Chaque catégorie a sa couleur, son ton et sa structure de fiche. Un récit ne se lit pas comme une définition, et ne s'affiche donc pas comme elle.</p>
+  </div>
+
+  <div class="galerie">
+    <div class="piste" tabindex="0" role="region" aria-label="Galerie des treize registres">
+      <figure class="vue zoom">
+        <div class="tel"><img src="/captures/ios-biais-cognitif.webp" alt="Une fiche du Biais Cognitif" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>Le Biais Cognitif</b>Le travers, puis comment s'en protéger.</figcaption>
+      </figure>
+      <figure class="vue zoom d1">
+        <div class="tel"><img src="/captures/ios-idee-recue.webp" alt="Une fiche de L'Idée Reçue" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>L'Idée Reçue</b>La croyance, la réalité et d'où vient la confusion.</figcaption>
+      </figure>
+      <figure class="vue zoom d2">
+        <div class="tel"><img src="/captures/ios-ce-jour-la.webp" alt="Une fiche de Ce jour-là" loading="lazy" width="750" height="1630"></div>
+        <figcaption><b>Ce jour-là</b>L'événement daté, son année et sa source.</figcaption>
+      </figure>
+    </div>
+    <div class="fleches">
+      <button class="fleche prec" type="button" aria-label="Voir les écrans précédents">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="fleche suiv" type="button" aria-label="Voir les écrans suivants">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="bande claire courte">
+  <div class="centre">
+    <h2 class="anim">Garder, et retrouver.</h2>
+    <p class="sous anim d1">Une étoile met la fiche de côté. Les favoris se rangent par catégorie, et l'historique garde la trace de ce que vous avez déjà vu, y compris après une réinstallation.</p>
+  </div>
+  <div class="centre">
+    <p class="fin anim">Une fiche déjà vue se rouvre toujours gratuitement, même si l'essai de sa catégorie est épuisé.</p>
+  </div>
+</section>
+
+<section class="bande nuit courte">
+  <div class="centre">
+    <h2 class="anim">Sources et méthode.</h2>
+    <p class="sous anim d1">La règle éditoriale n'est pas seulement écrite sur ce site. Elle est dans l'application, à portée de main, avec ce qui est vérifié et ce qui ne l'est pas.</p>
+  </div>
+</section>
+
+<section class="bande">
+  <div class="centre">
+    <h2 class="anim">Fiche technique.</h2>
+    <dl class="fiche">
+      <div class="anim"><dt>Plateformes</dt><dd>iPhone, Android, widget d'écran d'accueil sur les deux, application Apple Watch</dd></div>
+      <div class="anim"><dt>Langue</dt><dd>Français</dd></div>
+      <div class="anim"><dt>Contenu</dt><dd>5&nbsp;052 fiches embarquées, réparties en treize catégories</dd></div>
+      <div class="anim"><dt>Hors connexion</dt><dd>Lecture complète sans réseau, hors images et liens de source</dd></div>
+      <div class="anim"><dt>Modèle</dt><dd>Gratuit pour Le Mot Oublié, dix découvertes offertes ailleurs, puis achat unique</dd></div>
+      <div class="anim"><dt>Abonnement</dt><dd>Aucun</dd></div>
+      <div class="anim"><dt>Publicité</dt><dd>Aucune</dd></div>
+      <div class="anim"><dt>Compte</dt><dd>Aucun, l'application s'ouvre directement</dd></div>
+      <div class="anim"><dt>Données</dt><dd>Enregistrées sur l'appareil, jamais transmises au développeur</dd></div>
+      <div class="anim"><dt>Accessibilité</dt><dd>Dynamic Type jusqu'aux tailles d'accessibilité, VoiceOver, mode sombre, Reduce Motion</dd></div>
+      <div class="anim"><dt>Éditeur</dt><dd>Arnaud Clavien, Suisse</dd></div>
+    </dl>
+    <div class="actions anim">
+      <a class="bouton" href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        App Store
+      </a>
+      <a class="bouton" href="https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.9 2.3a1 1 0 0 0-.5.9v17.6a1 1 0 0 0 .5.9l9.3-9.7L3.9 2.3zm10.1 10.6 2.6 2.6-9.5 5.4 6.9-8zm3.6-4 3.1 1.8c.9.5.9 1.9 0 2.4l-3.1 1.8-2.8-2.9 2.8-2.9zM7.1 3.3l9.5 5.4-2.6 2.6L7.1 3.3z"/></svg>
+        Google Play
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Conçue et développée en Suisse par Arnaud Clavien.
+  <nav aria-label="Pages du site">
+    <a href="/decouvrir">L'application</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/a-propos">À propos</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/confidentialite">Confidentialité</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/cgu">CGU</a>
+  </nav>
+</footer>
+
+</body>
+</html>

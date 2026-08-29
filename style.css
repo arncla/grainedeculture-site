@@ -1,0 +1,378 @@
+/* Graine de Culture, feuille de style du site vitrine.
+   Tokens repris du design system de l'app (CONTEXTE.md 2.1) : mêmes neutres,
+   or de signature réservé au filet et à l'emblème. Août 2026 : la règle des
+   rôles du design system s'applique ici aussi, l'encre porte les actions et
+   les couleurs de catégorie ont une valeur par mode. */
+
+:root{
+  --fond:#0D0F13;
+  --surface:#171A20;
+  --surface2:#1F232C;
+  --surface3:#262B36;
+  --encre:#F3EEE1;
+  --corps:#CDD1D9;
+  --faible:#9097A1;
+  /* Règle des rôles : l'encre porte les actions, l'or est réservé à la marque
+     (logo et filet signature). L'or fonctionnel reste déclaré comme jeton du
+     design system mais n'habille plus aucun lien ni bouton du site. */
+  --or:#CBA55C;
+  --or-a:#E8D49A;
+  --or-b:#B08A3C;
+  --or-signature:#C9A14E;
+  --action:#F3EEE1;
+  --action-texte:#171A20;
+  --creme:#F4EFE3;
+  --trait:rgba(255,255,255,.09);
+  --trait-fort:rgba(255,255,255,.17);
+  --bezel:#2A2F3A;
+  --voile:rgba(13,15,19,.78);
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+[data-theme="light"]{
+  --fond:#F0E9D8;
+  --surface:#FBF7EE;
+  --surface2:#FFFFFF;
+  --surface3:#F1EAD9;
+  --encre:#1C1E23;
+  --corps:#3C4047;
+  --faible:#62687A;
+  --or:#80601F;
+  --trait:rgba(0,0,0,.10);
+  --trait-fort:rgba(0,0,0,.17);
+  --action:#1C1E23;
+  --action-texte:#F4EFE3;
+  --bezel:#1C1E23;
+  --voile:rgba(240,233,216,.80);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:64px; -webkit-text-size-adjust:100%; text-size-adjust:100%}
+:root{color-scheme:dark}
+[data-theme="light"]{color-scheme:light}
+body{
+  margin:0;
+  background:var(--fond);
+  color:var(--corps);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{display:block}
+img{max-width:100%; height:auto}
+a{color:var(--encre)}
+/* Les liens en ligne d'un paragraphe sont soulignés : posés à l'encre, la
+   couleur seule ne les distinguerait plus du texte qui les entoure. */
+.page p a,.page ul:not(.liens) li a,.faq .rep a{text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--encre); outline-offset:4px; border-radius:8px}
+/* Lien d'évitement : hors écran, visible à la prise de focus clavier. */
+.acces{
+  position:absolute; left:-9999px; top:10px; z-index:100;
+  background:var(--action); color:var(--action-texte);
+  padding:11px 20px; border-radius:13px; font-weight:600; font-size:15px; text-decoration:none;
+}
+.acces:focus{left:10px}
+h1,h2,h3{font-family:var(--serif); color:var(--encre); font-weight:500; margin:0; text-wrap:balance}
+h1,h2{letter-spacing:-.025em; line-height:1.02}
+p{margin:0; text-wrap:pretty}
+/* Les intertitres et les phrases courtes se répartissent sur des lignes de longueur
+   proche ; les paragraphes longs évitent seulement la ligne veuve. Pas de texte
+   justifié : sans césure, le français y produit des rivières de blancs. */
+.sous,.lede,.fin,.vue figcaption,.chiffre p,.cat span{text-wrap:balance}
+.page p,.faq .rep p,.encart p,.colonnes p{text-wrap:pretty}
+
+/* Barre de navigation */
+.barre{
+  position:sticky; top:0; z-index:50;
+  background:var(--voile);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--trait);
+}
+.barre-in{
+  max-width:1140px; margin:0 auto; padding:0 22px;
+  height:54px; display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--encre)}
+.logo img{width:26px; height:26px}
+.logo span{font-family:var(--serif); font-weight:500; font-size:19px; letter-spacing:-.01em; white-space:nowrap}
+.barre nav{display:flex; align-items:center; gap:22px}
+/* Padding vertical : cible tactile confortable sans changer la hauteur de barre. */
+.barre nav a{color:var(--corps); text-decoration:none; font-size:14px; font-weight:600; white-space:nowrap; padding:10px 0}
+.barre nav a:hover{color:var(--encre)}
+/* Page courante : couleur + soulignement, l'info ne repose pas sur la seule couleur. */
+.barre nav a[aria-current="page"]{color:var(--encre); text-decoration:underline; text-underline-offset:6px; text-decoration-thickness:1px}
+.barre .obtenir{
+  background:var(--action); color:var(--action-texte);
+  padding:7px 16px; border-radius:999px;
+}
+.barre .obtenir:hover{color:var(--action-texte); opacity:.88}
+.bascule{
+  width:34px; height:34px; flex:none; display:inline-flex; align-items:center; justify-content:center;
+  background:none; border:1px solid var(--trait-fort); border-radius:999px;
+  color:var(--encre); cursor:pointer; padding:0; transition:border-color .2s ease;
+  position:relative;
+}
+/* Zone tactile étendue à 44 px, sans changer le dessin. */
+.bascule::after{content:""; position:absolute; inset:-5px; border-radius:50%}
+.bascule:hover{border-color:var(--encre)}
+.bascule svg{width:16px; height:16px}
+.bascule .lune{display:none}
+[data-theme="light"] .bascule .soleil{display:none}
+[data-theme="light"] .bascule .lune{display:block}
+@media(max-width:900px){ .barre .masq{display:none} }
+@media(max-width:600px){ .barre .masq2{display:none} .barre nav{gap:16px} }
+@media(max-width:430px){ .logo span{display:none} .barre nav{gap:14px} }
+
+/* Bandes */
+.bande{padding:clamp(84px,12vw,156px) 22px}
+.bande.claire{background:var(--surface)}
+.bande.nuit{
+  background:#14171D;
+  --surface:#1F232C; --surface2:#262B36; --surface3:#262B36;
+  --encre:#F3EEE1; --corps:#CDD1D9; --faible:#9097A1;
+  --action:#F3EEE1; --action-texte:#171A20;
+  --trait:rgba(255,255,255,.09); --trait-fort:rgba(255,255,255,.17);
+  --bezel:#2A2F3A;
+  color:var(--corps);
+}
+.bande.courte{padding-top:clamp(52px,7vw,84px); padding-bottom:clamp(52px,7vw,84px)}
+
+.centre{max-width:880px; margin:0 auto; text-align:center}
+.texte{max-width:680px; margin:0 auto}
+
+h1{font-size:clamp(46px,9vw,96px)}
+h2{font-size:clamp(31px,5.2vw,58px)}
+h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
+.sous{font-size:clamp(18px,2.2vw,23px); color:var(--corps); margin-top:22px; line-height:1.45; letter-spacing:-.008em}
+.lede{font-family:var(--serif); font-style:italic; font-size:clamp(19px,2.4vw,25px); color:var(--encre); margin-top:18px}
+.fin{font-size:14.5px; color:var(--faible); margin-top:22px}
+.corps{font-size:17.5px; margin-top:20px; line-height:1.68}
+
+/* Filet signature, seul motif or décoratif */
+.filet{
+  width:34px; height:2px; border-radius:2px;
+  background:var(--or-signature);
+  margin:0 auto 26px;
+}
+.filet.gauche{margin-left:0; margin-right:auto}
+
+/* Boutons */
+.actions{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:38px}
+.bouton{
+  display:inline-flex; align-items:center; gap:9px;
+  font-weight:600; font-size:16px; text-decoration:none;
+  color:var(--action-texte); background:var(--action);
+  padding:13px 26px; border-radius:13px;
+  transition:opacity .2s ease, border-color .2s ease, color .2s ease;
+}
+.bouton:hover{opacity:.88}
+.bouton.creux{color:var(--encre); background:none; border:1px solid var(--trait-fort)}
+.bouton.creux:hover{border-color:var(--encre)}
+.bouton svg{width:19px; height:19px; flex:none}
+.retour{display:inline-flex; align-items:center; gap:7px; color:var(--faible); text-decoration:none; font-weight:600; font-size:14px}
+.retour:hover{color:var(--encre)}
+.retour svg{width:15px; height:15px}
+
+/* Appareil */
+.tel{
+  width:100%;
+  background:var(--bezel);
+  padding:8px;
+  border-radius:42px;
+}
+.tel img{width:100%; aspect-ratio:750/1630; object-fit:cover; border-radius:35px; display:block}
+.solo{width:min(272px,66vw); margin:52px auto 0}
+.paire{display:flex; gap:26px; justify-content:center; flex-wrap:wrap; margin-top:52px}
+.paire .tel{width:min(248px,62vw)}
+
+/* Carrousel */
+.galerie{max-width:1180px; margin:52px auto 0}
+.piste{
+  display:flex; gap:22px;
+  overflow-x:auto; scroll-snap-type:x mandatory;
+  padding:4px 22px 18px; margin:0 -22px;
+  scrollbar-width:none;
+}
+.piste::-webkit-scrollbar{display:none}
+@media(min-width:1180px){ .piste{justify-content:safe center} }
+.vue{flex:0 0 204px; scroll-snap-align:center; margin:0}
+.vue .tel{border-radius:35px; padding:7px}
+.vue .tel img{border-radius:29px}
+.vue figcaption{margin-top:16px; font-size:14.5px; color:var(--faible); line-height:1.45}
+.vue figcaption b{display:block; color:var(--encre); font-family:var(--serif); font-weight:500; font-size:17px; margin-bottom:3px}
+.fleches{display:flex; gap:10px; justify-content:flex-end; padding:0 22px; margin-top:6px}
+.fleche{
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--trait); background:var(--surface); color:var(--encre);
+  display:inline-flex; align-items:center; justify-content:center; cursor:pointer;
+  transition:border-color .2s ease;
+  position:relative;
+}
+.fleche::after{content:""; position:absolute; inset:-3px; border-radius:50%}
+.fleche:hover{border-color:var(--encre)}
+.fleche svg{width:17px; height:17px}
+.fleche[disabled]{opacity:.34; cursor:default}
+@media(max-width:640px){ .fleches{display:none} }
+
+/* Chiffres */
+.chiffres{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:880px; margin:60px auto 0}
+@media(max-width:620px){ .chiffres{grid-template-columns:1fr; gap:36px} }
+.chiffre .n{font-family:var(--serif); font-weight:500; font-size:clamp(44px,7vw,74px); color:var(--encre); line-height:1; letter-spacing:-.035em}
+.chiffre p{font-size:15.5px; color:var(--faible); margin-top:10px}
+
+/* Encart */
+.encart{
+  border:1px solid var(--trait); border-radius:16px;
+  padding:24px 26px; margin-top:48px; text-align:left; background:var(--surface3);
+}
+.encart h3{font-size:17.5px; margin-bottom:8px}
+.encart p{font-size:15.5px; color:var(--faible)}
+.encart p+p{margin-top:10px}
+
+/* Colonnes de texte */
+.colonnes{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  max-width:1000px; margin:60px auto 0; text-align:left;
+}
+.colonnes > div{padding:0 30px; border-left:1px solid var(--trait)}
+.colonnes > div:first-child{padding-left:0; border-left:none}
+.colonnes > div:last-child{padding-right:0}
+.colonnes h3{margin-bottom:12px}
+.colonnes p{font-size:15.5px; color:var(--faible)}
+@media(max-width:800px){
+  .colonnes{grid-template-columns:1fr; gap:32px}
+  .colonnes > div{padding:0; border-left:none; border-top:1px solid var(--trait); padding-top:26px}
+  .colonnes > div:first-child{border-top:none; padding-top:0}
+}
+
+/* Les treize catégories.
+   L'accent de catégorie ne colore jamais un petit texte : il tient dans la
+   pastille et le filet de gauche, jamais dans le nom. */
+.categories{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:0 44px;
+  max-width:1040px; margin:52px auto 0; text-align:left;
+}
+@media(max-width:760px){ .categories{grid-template-columns:1fr} }
+.cat{
+  display:flex; gap:15px; align-items:flex-start;
+  padding:19px 0; border-bottom:1px solid var(--trait);
+}
+.cat .pastille{
+  width:11px; height:11px; border-radius:50%; flex:none;
+  background:var(--cat-sombre); margin-top:7px;
+}
+[data-theme="light"] .cat .pastille{background:var(--cat-clair)}
+.cat b{display:block; color:var(--encre); font-family:var(--serif); font-weight:500; font-size:18px; letter-spacing:-.01em}
+.cat span{display:block; font-size:15px; color:var(--faible); line-height:1.5; margin-top:3px}
+.cat i{
+  font-style:normal; display:inline-block; margin-top:8px;
+  font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--faible); border:1px solid var(--trait-fort); border-radius:999px; padding:2px 9px;
+}
+.cat.libre i{color:var(--encre)}
+
+/* Fiche technique */
+.fiche{max-width:760px; margin:52px auto 0; text-align:left}
+.fiche div{
+  display:grid; grid-template-columns:210px 1fr; gap:20px;
+  padding:17px 0; border-bottom:1px solid var(--trait); font-size:16px;
+}
+.fiche dt{color:var(--faible); margin:0}
+.fiche dd{color:var(--encre); margin:0}
+@media(max-width:560px){
+  .fiche div{grid-template-columns:1fr; gap:4px}
+  .fiche dt{font-size:14px}
+}
+
+/* Questions fréquentes */
+.faq{max-width:760px; margin:52px auto 0; text-align:left}
+.faq details{border-bottom:1px solid var(--trait)}
+.faq summary{
+  list-style:none; cursor:pointer; padding:22px 32px 22px 0; position:relative;
+  font-family:var(--serif); font-weight:500; font-size:20px; color:var(--encre);
+  letter-spacing:-.012em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:""; position:absolute; right:5px; top:31px;
+  width:9px; height:9px; border-right:2px solid var(--encre); border-bottom:2px solid var(--encre);
+  transform:rotate(45deg); transition:transform .25s ease;
+}
+.faq details[open] summary::after{transform:rotate(-135deg); top:35px}
+.faq summary:hover{opacity:.72}
+.faq .rep{padding:0 32px 24px 0; font-size:16.5px; color:var(--corps); line-height:1.65}
+.faq .rep p+p{margin-top:14px}
+
+/* Hero */
+.hero{padding-top:clamp(36px,5vw,62px); padding-bottom:clamp(56px,7vw,86px)}
+.hero-grille{
+  display:grid; grid-template-columns:1.02fr .98fr;
+  gap:clamp(30px,5vw,66px); align-items:center;
+  max-width:1140px; margin:0 auto; text-align:left;
+}
+.hero-grille h1{font-size:clamp(44px,6.6vw,82px)}
+.hero-emblem{width:62px; height:62px; margin-bottom:20px}
+.hero .tel{width:min(268px,74vw); margin:0 auto}
+.points{list-style:none; padding:0; margin:26px 0 0; display:grid; gap:11px}
+.points li{position:relative; padding-left:24px; font-size:16px; color:var(--corps)}
+.points li::before{
+  content:""; position:absolute; left:0; top:9px;
+  width:8px; height:8px; border-radius:50%; background:var(--faible);
+}
+.hero .actions{margin-top:32px; justify-content:flex-start}
+.hero .filet{margin-left:0}
+@media(max-width:900px){
+  .hero-grille{grid-template-columns:1fr; text-align:center; gap:36px}
+  .hero-emblem, .hero .filet{margin-left:auto; margin-right:auto}
+  .hero .actions{justify-content:center}
+  .points{max-width:340px; margin-left:auto; margin-right:auto}
+  .points li{text-align:left}
+}
+
+/* Pages de texte long (à propos, mentions) */
+.page{max-width:760px; margin:0 auto; padding:clamp(46px,7vw,76px) 22px clamp(56px,8vw,88px)}
+.page h1{font-size:clamp(32px,5vw,46px); line-height:1.08}
+.page h2{font-size:23px; letter-spacing:-.012em; margin:38px 0 12px}
+.page p{margin:0 0 15px; max-width:68ch}
+.page ul{margin:0 0 15px; padding-left:20px; max-width:68ch}
+.page li{margin-bottom:7px}
+.page .maj{font-size:13.5px; color:var(--faible); margin-top:6px}
+.page .lead{font-size:18.5px; color:var(--corps); margin-bottom:18px}
+.portrait{width:132px; height:132px; border-radius:50%; object-fit:cover; margin-bottom:22px}
+.liens{list-style:none; margin:0; padding:0; border:1px solid var(--trait); border-radius:16px; overflow:hidden; background:var(--surface)}
+.liens li+li{border-top:1px solid var(--trait)}
+.liens a{display:flex; align-items:center; gap:13px; padding:15px 18px; color:var(--encre); text-decoration:none; font-weight:600; font-size:15.5px}
+.liens a:hover{background:var(--surface2)}
+.liens .fleche-l{margin-left:auto; color:var(--faible)}
+
+footer{background:var(--surface); border-top:1px solid var(--trait); color:var(--faible); padding:48px 22px 56px; text-align:center; font-size:14px}
+footer nav{margin-top:8px; font-size:13.5px}
+footer a{color:var(--faible); text-decoration:none; display:inline-block; padding:8px 2px}
+footer a:hover{color:var(--encre)}
+footer .sep{margin:0 9px; opacity:.5}
+@media(max-width:480px){
+  footer .sep{display:none}
+  footer nav a{padding:8px 9px}
+}
+
+/* Apparitions au défilement */
+.js .anim{opacity:0; transform:translateY(26px)}
+.js .anim.vu{opacity:1; transform:none; transition:opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1)}
+.js .anim.d1.vu{transition-delay:.1s}
+.js .anim.d2.vu{transition-delay:.2s}
+.js .anim.d3.vu{transition-delay:.3s}
+.js .zoom{opacity:0; transform:scale(.95) translateY(22px)}
+.js .zoom.vu{opacity:1; transform:none; transition:opacity 1.1s cubic-bezier(.22,.61,.36,1), transform 1.1s cubic-bezier(.22,.61,.36,1)}
+@keyframes flotte{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.flotte{animation:flotte 4.6s ease-in-out infinite}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .anim,.js .zoom{opacity:1!important; transform:none!important; transition:none!important}
+  .flotte{animation:none}
+  *{transition:none!important; animation:none!important}
+}
