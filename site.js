@@ -35,12 +35,14 @@ document.addEventListener('DOMContentLoaded', function(){
     var fermer = function(rendreFocus){
       menu.classList.remove('ouvert');
       burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Ouvrir le menu');
       document.body.style.overflow = '';
       if(rendreFocus){ burger.focus(); }
     };
     var ouvrir = function(){
       menu.classList.add('ouvert');
       burger.setAttribute('aria-expanded', 'true');
+      burger.setAttribute('aria-label', 'Fermer le menu');
       document.body.style.overflow = 'hidden';
       var premier = menu.querySelector('a');
       if(premier){ premier.focus(); }
