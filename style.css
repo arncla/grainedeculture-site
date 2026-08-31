@@ -140,7 +140,7 @@ p{margin:0; text-wrap:pretty}
 /* Les intertitres et les phrases courtes se répartissent sur des lignes de longueur
    proche ; les paragraphes longs évitent seulement la ligne veuve. Pas de texte
    justifié : sans césure, le français y produit des rivières de blancs. */
-.sous,.lede,.fin,.vue figcaption,.chiffre p,.cat span{text-wrap:balance}
+.sous,.fin,.vue figcaption,.chiffre p,.cat span{text-wrap:balance}
 .page p,.faq .rep p,.encart p,.colonnes p{text-wrap:pretty}
 
 /* Barre de navigation */
@@ -210,7 +210,6 @@ h1{font-size:clamp(46px,9vw,96px)}
 h2{font-size:clamp(31px,5.2vw,58px)}
 h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 .sous{font-size:clamp(18px,2.2vw,23px); color:var(--corps); margin-top:22px; line-height:1.45; letter-spacing:-.008em}
-.lede{font-family:var(--serif); font-style:italic; font-size:clamp(19px,2.4vw,25px); color:var(--encre); margin-top:18px}
 .fin{font-size:14.5px; color:var(--faible); margin-top:22px}
 .corps{font-size:17.5px; margin-top:20px; line-height:1.68}
 
@@ -371,7 +370,7 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 /* Hero */
 .hero{padding-top:clamp(36px,5vw,62px); padding-bottom:clamp(56px,7vw,86px)}
 .hero-grille{
-  display:grid; grid-template-columns:1.2fr .8fr;
+  display:grid; grid-template-columns:1.32fr .68fr;
   gap:clamp(30px,5vw,66px); align-items:center;
   max-width:1140px; margin:0 auto; text-align:left;
 }
