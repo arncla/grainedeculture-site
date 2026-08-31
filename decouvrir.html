@@ -19,13 +19,20 @@
 <meta name="description" content="À quoi ressemble Graine de Culture : l'accueil, la fiche du jour, les treize catégories, les favoris, la page Sources et méthode.">
 <link rel="canonical" href="https://grainedeculture.ch/decouvrir">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Graine de Culture">
 <meta property="og:title" content="L'application Graine de Culture, écran par écran">
 <meta property="og:description" content="À quoi ressemble Graine de Culture : l'accueil, la fiche du jour, les treize catégories, les favoris.">
 <meta property="og:url" content="https://grainedeculture.ch/decouvrir">
 <meta property="og:image" content="https://grainedeculture.ch/og.png">
+<meta property="og:image:alt" content="L'application Graine de Culture, écran par écran.">
 <meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="L'application Graine de Culture, écran par écran">
+<meta name="twitter:description" content="À quoi ressemble Graine de Culture : l'accueil, la fiche du jour, les treize catégories, les favoris.">
+<meta name="twitter:image" content="https://grainedeculture.ch/og.png">
+<meta name="twitter:image:alt" content="L'application Graine de Culture, écran par écran.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -48,31 +55,40 @@
       <span>Graine de Culture</span>
     </a>
     <nav aria-label="Navigation principale">
-      <a href="/decouvrir" aria-current="page">L'application</a>
-      <a class="masq" href="/#categories">Les catégories</a>
-      <a class="masq" href="/#methode">La méthode</a>
-      <a class="masq2" href="/#questions">Questions</a>
-      <a href="/a-propos">À propos</a>
-      <a class="obtenir masq2" href="/#obtenir">Obtenir</a>
+      <a class="lien-nav" href="/decouvrir" aria-current="page">L'app</a>
+      <a class="lien-nav" href="/#methode">Méthode</a>
+      <a class="lien-nav" href="/#tarifs">Tarifs</a>
+      <a class="lien-nav" href="/#questions">FAQ</a>
+      <a class="cta" href="/#obtenir">Essayer gratuitement</a>
       <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
         <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
         <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
+      </button>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="ouvrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="fermer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </nav>
   </div>
 </header>
 
+<div class="menu" id="menu">
+  <a href="/">Accueil</a>
+  <a href="/decouvrir" aria-current="page">L'app</a>
+  <a href="/#methode">Méthode</a>
+  <a href="/#tarifs">Tarifs</a>
+  <a href="/#questions">FAQ</a>
+  <a href="/a-propos">À propos</a>
+  <a class="menu-cta" href="/#obtenir">Essayer gratuitement</a>
+</div>
+
 <main id="contenu" tabindex="-1">
 
 <section class="bande courte">
   <div class="centre">
-    <a class="retour" href="/">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-      Retour à l'accueil
-    </a>
-    <div class="filet" style="margin-top:26px"></div>
-    <h1 class="anim" style="font-size:clamp(38px,6vw,68px)">Écran par écran.</h1>
-    <p class="sous anim d1">Aucune mise en scène&nbsp;: ce sont les écrans de l'application, tels qu'ils s'affichent sur un iPhone.</p>
+    <div class="filet"></div>
+    <h1 class="anim titre-moyen">Écran par écran.</h1>
+    <p class="sous anim d1">Voici l'application, telle qu'elle est. Captures prises sur iPhone, l'expérience est identique sur Android.</p>
   </div>
 </section>
 
@@ -115,7 +131,7 @@
   </div>
 
   <div class="galerie">
-    <div class="piste" tabindex="0" role="region" aria-label="Galerie des treize registres">
+    <section class="piste" tabindex="0" aria-label="Galerie des treize registres">
       <figure class="vue zoom">
         <div class="tel"><img src="/captures/ios-biais-cognitif.webp" alt="Une fiche du Biais Cognitif" loading="lazy" width="750" height="1630"></div>
         <figcaption><b>Le Biais Cognitif</b>Le travers, puis comment s'en protéger.</figcaption>
@@ -128,7 +144,8 @@
         <div class="tel"><img src="/captures/ios-ce-jour-la.webp" alt="Une fiche de Ce jour-là" loading="lazy" width="750" height="1630"></div>
         <figcaption><b>Ce jour-là</b>L'événement daté, son année et sa source.</figcaption>
       </figure>
-    </div>
+    </section>
+    <p class="compteur" role="status" aria-live="polite">1 sur 3</p>
     <div class="fleches">
       <button class="fleche prec" type="button" aria-label="Voir les écrans précédents">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
@@ -143,7 +160,7 @@
 <section class="bande claire courte">
   <div class="centre">
     <h2 class="anim">Garder, et retrouver.</h2>
-    <p class="sous anim d1">Une étoile met la fiche de côté. Les favoris se rangent par catégorie, et l'historique garde la trace de ce que vous avez déjà vu, y compris après une réinstallation.</p>
+    <p class="sous anim d1">Une étoile met la fiche de côté. Les favoris se rangent par catégorie, et l'historique garde la trace de ce que vous avez déjà vu.</p>
   </div>
   <div class="centre">
     <p class="fin anim">Une fiche déjà vue se rouvre toujours gratuitement, même si l'essai de sa catégorie est épuisé.</p>
@@ -173,6 +190,13 @@
       <div class="anim"><dt>Accessibilité</dt><dd>Dynamic Type jusqu'aux tailles d'accessibilité, VoiceOver, mode sombre, Reduce Motion</dd></div>
       <div class="anim"><dt>Éditeur</dt><dd>Arnaud Clavien, Suisse</dd></div>
     </dl>
+    <div class="texte">
+      <div class="encart anim">
+        <h3>Widget et Apple Watch</h3>
+        <p>Un widget d'écran d'accueil affiche la découverte du jour, sur iPhone comme sur Android, dans la catégorie de votre choix. L'application Apple Watch reprend la carte du jour au poignet.</p>
+        <p>Vous avez repéré une erreur&nbsp;? Le bouton «&nbsp;Signaler une coquille&nbsp;» au bas de chaque fiche, ou <a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch</a>. Chaque signalement est lu.</p>
+      </div>
+    </div>
     <div class="actions anim">
       <a class="bouton" href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
@@ -189,16 +213,34 @@
 </main>
 
 <footer>
-  Conçue et développée en Suisse par Arnaud Clavien.
-  <nav aria-label="Pages du site">
-    <a href="/decouvrir">L'application</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/a-propos">À propos</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/confidentialite">Confidentialité</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/cgu">CGU</a>
-  </nav>
+  <div class="pied">
+    <div>
+      <h2>Télécharger</h2>
+      <ul>
+        <li><a href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener" class="ext" data-plausible-event-name="pied-appstore">App Store</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture" target="_blank" rel="noopener" class="ext" data-plausible-event-name="pied-play">Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Le projet</h2>
+      <ul>
+        <li><a href="/decouvrir">L'application</a></li>
+        <li><a href="/a-propos">À propos</a></li>
+        <li><a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch</a></li>
+        <li><a href="https://ko-fi.com/grainedeculture" target="_blank" rel="noopener" class="ext" data-plausible-event-name="kofi-click">Offrir un café</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Suivre et lire</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/grainedeculturee" target="_blank" rel="noopener" class="ext">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@graine.de.culture" target="_blank" rel="noopener" class="ext">TikTok</a></li>
+        <li><a href="/confidentialite">Confidentialité</a></li>
+        <li><a href="/cgu">CGU</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bas">Conçue et développée en Suisse par Arnaud Clavien.</div>
 </footer>
 
 </body>

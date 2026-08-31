@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="theme-color" name="theme-color" content="#F0E9D8">
+<script>
+  // Thème initial : clair par défaut, le choix explicite du visiteur prime.
+  (function(){
+    var choix = null;
+    try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
+    if(choix === 'dark'){
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+    }
+  })();
+</script>
+<title>Page introuvable, Graine de Culture</title>
+<meta name="description" content="Cette page n'existe pas ou plus sur grainedeculture.ch.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+</head>
+<body>
+
+<a class="acces" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <div class="barre-in">
+    <a class="logo" href="/" aria-label="Graine de Culture, accueil">
+      <img src="/emblem.svg" alt="" width="26" height="26">
+      <span>Graine de Culture</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a class="lien-nav" href="/decouvrir">L'app</a>
+      <a class="lien-nav" href="/#methode">Méthode</a>
+      <a class="lien-nav" href="/#tarifs">Tarifs</a>
+      <a class="lien-nav" href="/#questions">FAQ</a>
+      <a class="cta" href="/#obtenir">Essayer gratuitement</a>
+      <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
+        <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
+      </button>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="ouvrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="fermer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <a href="/">Accueil</a>
+  <a href="/decouvrir">L'app</a>
+  <a href="/#methode">Méthode</a>
+  <a href="/#tarifs">Tarifs</a>
+  <a href="/#questions">FAQ</a>
+  <a href="/a-propos">À propos</a>
+  <a class="menu-cta" href="/#obtenir">Essayer gratuitement</a>
+</div>
+
+<main id="contenu" tabindex="-1">
+  <div class="err">
+    <img class="hero-emblem centre-bloc" src="/emblem.svg" alt="" width="62" height="62">
+    <h1>Page introuvable.</h1>
+    <p class="sous">Cette adresse n'existe pas, ou plus. Le reste du site est intact.</p>
+    <div class="actions">
+      <a class="bouton" href="/">Revenir à l'accueil</a>
+      <a class="bouton creux" href="/#obtenir">Télécharger l'application</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="pied">
+    <div>
+      <h2>Télécharger</h2>
+      <ul>
+        <li><a href="https://apps.apple.com/fr/app/graine-de-culture/id6761060784" target="_blank" rel="noopener" class="ext">App Store</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture" target="_blank" rel="noopener" class="ext">Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Le projet</h2>
+      <ul>
+        <li><a href="/decouvrir">L'application</a></li>
+        <li><a href="/a-propos">À propos</a></li>
+        <li><a href="mailto:info@grainedeculture.ch">info@grainedeculture.ch</a></li>
+        <li><a href="https://ko-fi.com/grainedeculture" target="_blank" rel="noopener" class="ext">Offrir un café</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Suivre et lire</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/grainedeculturee" target="_blank" rel="noopener" class="ext">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@graine.de.culture" target="_blank" rel="noopener" class="ext">TikTok</a></li>
+        <li><a href="/confidentialite">Confidentialité</a></li>
+        <li><a href="/cgu">CGU</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bas">Conçue et développée en Suisse par Arnaud Clavien.</div>
+</footer>
+
+</body>
+</html>
