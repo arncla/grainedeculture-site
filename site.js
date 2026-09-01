@@ -64,6 +64,15 @@ document.addEventListener('DOMContentLoaded', function(){
     menu.addEventListener('click', function(e){
       if(e.target.closest('a')){ fermer(false); }
     });
+    // Les liens de la barre restent cliquables menu ouvert (logo, bouton
+    // d'essai entre 421 et 760 px) : eux aussi referment le panneau, sinon
+    // la page resterait inerte et bloquee derriere le menu.
+    var barreIn = document.querySelector('.barre-in');
+    if(barreIn){
+      barreIn.addEventListener('click', function(e){
+        if(e.target.closest('a') && burger.getAttribute('aria-expanded') === 'true'){ fermer(false); }
+      });
+    }
     document.addEventListener('keydown', function(e){
       if(burger.getAttribute('aria-expanded') !== 'true') return;
       if(e.key === 'Escape'){ fermer(true); return; }
