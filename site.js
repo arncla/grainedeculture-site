@@ -32,11 +32,21 @@ document.addEventListener('DOMContentLoaded', function(){
   var burger = document.querySelector('.burger');
   var menu = document.getElementById('menu');
   if(burger && menu){
+    // Pendant l'ouverture, le reste de la page est rendu inerte : la
+    // tabulation et les lecteurs d'ecran restent dans la barre et le panneau,
+    // bouton de fermeture compris.
+    var inertes = function(oui){
+      ['main', 'footer'].forEach(function(sel){
+        var el = document.querySelector(sel);
+        if(el){ el.inert = oui; }
+      });
+    };
     var fermer = function(rendreFocus){
       menu.classList.remove('ouvert');
       burger.setAttribute('aria-expanded', 'false');
       burger.setAttribute('aria-label', 'Ouvrir le menu');
       document.body.style.overflow = '';
+      inertes(false);
       if(rendreFocus){ burger.focus(); }
     };
     var ouvrir = function(){
@@ -44,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
       burger.setAttribute('aria-expanded', 'true');
       burger.setAttribute('aria-label', 'Fermer le menu');
       document.body.style.overflow = 'hidden';
+      inertes(true);
       var premier = menu.querySelector('a');
       if(premier){ premier.focus(); }
     };
@@ -57,7 +68,12 @@ document.addEventListener('DOMContentLoaded', function(){
       if(burger.getAttribute('aria-expanded') !== 'true') return;
       if(e.key === 'Escape'){ fermer(true); return; }
       if(e.key !== 'Tab') return;
-      var focusables = menu.querySelectorAll('a, button');
+      // La boucle couvre la barre ET le panneau : le bouton de fermeture et la
+      // bascule de theme restent atteignables au clavier.
+      var focusables = Array.prototype.filter.call(
+        document.querySelectorAll('.barre-in a, .barre-in button, #menu a'),
+        function(el){ return el.offsetWidth > 0; }
+      );
       if(!focusables.length) return;
       var premier = focusables[0];
       var dernier = focusables[focusables.length - 1];
@@ -158,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function(){
       principal.setAttribute('href', 'https://play.google.com/store/apps/details?id=com.arnaudclavien.grainedeculture');
       principal.setAttribute('data-plausible-event-name', 'hero-play');
     } else if(ios){
-      principal.setAttribute('href', 'https://apps.apple.com/fr/app/graine-de-culture/id6761060784');
+      principal.setAttribute('href', 'https://apps.apple.com/ch/app/graine-de-culture/id6761060784?l=fr-FR');
       principal.setAttribute('data-plausible-event-name', 'hero-appstore');
     }
   }
