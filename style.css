@@ -565,6 +565,8 @@ footer .sep{margin:0 9px; opacity:.5}
 .exemple .repli[open] summary::after{transform:rotate(225deg); top:11px}
 .exemple .repli summary:focus-visible{outline:2px solid var(--encre); outline-offset:4px; border-radius:4px}
 .exemple .repli-corps{padding-top:4px}
+.exemple .appro{font-size:16px; color:var(--corps); line-height:1.55; margin-top:10px}
+.exemple .meta{font-size:13.5px; color:var(--faible); margin-top:12px}
 .exemple .src{margin-top:14px; font-size:14.5px; color:var(--faible)}
 .exemple .src a{color:var(--encre); text-decoration:underline; text-underline-offset:3px}
 .exemple .note{margin-top:18px; font-size:13.5px; color:var(--faible)}
