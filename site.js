@@ -157,10 +157,12 @@ document.addEventListener('DOMContentLoaded', function(){
     etat();
   });
 
-  // Catégories : quatre visibles, les neuf autres à la demande.
+  // Catégories : quatre visibles, les neuf autres à la demande. Le masquage
+  // n'est posé qu'ici, une fois le bouton câblé : sans script, ou si cette
+  // initialisation échouait, les treize restent visibles et le bouton absent.
   var plusCat = document.querySelector('.plus-cat');
   var liste = document.getElementById('liste-cat');
-  if(plusCat && liste){
+  if(plusCat && liste && plusCat.querySelector('span')){
     plusCat.addEventListener('click', function(){
       var ouvert = liste.classList.toggle('tout');
       plusCat.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
@@ -169,6 +171,33 @@ document.addEventListener('DOMContentLoaded', function(){
         var premier = liste.querySelector('.cat-cache b');
         if(premier){ premier.setAttribute('tabindex', '-1'); premier.focus(); }
       }
+    });
+    liste.classList.add('repliable');
+  }
+
+  // Captures en grand : le lien mène à l'image elle-même sans script ; avec
+  // script, il l'ouvre dans une fenêtre modale native (Échap et focus gérés
+  // par le navigateur, retour du focus au déclencheur assuré ici).
+  var loupe = document.getElementById('loupe');
+  if(loupe && typeof loupe.showModal === 'function'){
+    var image = loupe.querySelector('img');
+    var fermerLoupe = loupe.querySelector('.loupe-fermer');
+    var declencheur = null;
+    document.querySelectorAll('.agrandir').forEach(function(lien){
+      lien.addEventListener('click', function(e){
+        var source = lien.querySelector('img');
+        if(!source) return;
+        e.preventDefault();
+        declencheur = lien;
+        image.src = lien.getAttribute('href');
+        image.alt = source.alt;
+        loupe.showModal();
+      });
+    });
+    if(fermerLoupe){ fermerLoupe.addEventListener('click', function(){ loupe.close(); }); }
+    loupe.addEventListener('click', function(e){ if(e.target === loupe){ loupe.close(); } });
+    loupe.addEventListener('close', function(){
+      if(declencheur){ declencheur.focus(); declencheur = null; }
     });
   }
 

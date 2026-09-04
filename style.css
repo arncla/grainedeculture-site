@@ -249,6 +249,23 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 .solo{width:min(272px,66vw); margin:52px auto 0}
 .paire{display:flex; gap:26px; justify-content:center; flex-wrap:wrap; margin-top:52px}
 .paire .tel{width:min(248px,62vw)}
+.capture{margin:0; text-align:center}
+.capture figcaption{margin-top:12px; font-size:14.5px; color:var(--faible); max-width:248px; margin-left:auto; margin-right:auto}
+.agrandir{display:block; border-radius:35px; cursor:zoom-in; text-decoration:none}
+.agrandir .tel{display:block}
+.agrandir:focus-visible{outline:2px solid var(--encre); outline-offset:6px}
+.loupe{
+  border:0; padding:0; background:transparent; max-width:min(92vw,520px);
+  margin:auto; overflow:visible;
+}
+.loupe::backdrop{background:rgba(13,15,19,.78)}
+.loupe img{display:block; width:100%; height:auto; max-height:86vh; object-fit:contain; border-radius:24px}
+.loupe-fermer{
+  position:absolute; right:0; top:-46px; min-height:36px; padding:6px 16px;
+  background:var(--surface); color:var(--encre); border:1px solid var(--trait-fort); border-radius:999px;
+  font:inherit; font-size:14px; font-weight:600; cursor:pointer;
+}
+.loupe-fermer:focus-visible{outline:2px solid #fff; outline-offset:3px}
 
 /* Carrousel */
 .galerie{max-width:1180px; margin:52px auto 0}
@@ -377,9 +394,7 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 /* Le titre partage la largeur avec la capture : sa taille suit la colonne,
    pas la fenêtre, sinon il se casse en cinq bouts sur grand écran. */
 .hero-grille h1{font-size:clamp(38px,4.5vw,58px)}
-/* Chaque phrase forme son propre bloc : l'équilibrage des lignes s'applique
-   à chacune, sinon la seconde finit sur un mot seul. */
-.hero-grille h1 .l{display:block}
+.hero .sur-titre{font-size:13px; color:var(--faible); margin-bottom:14px}
 .hero-emblem{width:62px; height:62px; margin-bottom:20px}
 .hero .tel{width:min(268px,74vw); margin:0 auto}
 .points{list-style:none; padding:0; margin:26px 0 0; display:grid; gap:11px}
@@ -536,36 +551,34 @@ footer .sep{margin:0 9px; opacity:.5}
   color:var(--faible); margin-bottom:6px;
 }
 .exemple .encart-ex p{font-size:16px; color:var(--corps)}
-.exemple .repli{
-  margin-top:20px; padding-top:16px; border-top:1px solid var(--trait);
+.exemple .repli{margin-top:20px; padding-top:16px; border-top:1px solid var(--trait)}
+.exemple .repli summary{
+  cursor:pointer; list-style:none; position:relative; padding-right:28px; min-height:28px;
   font-family:var(--serif); font-size:17px; color:var(--encre);
 }
+.exemple .repli summary::-webkit-details-marker{display:none}
+.exemple .repli summary::after{
+  content:""; position:absolute; right:6px; top:7px; width:9px; height:9px;
+  border-right:2px solid var(--encre); border-bottom:2px solid var(--encre);
+  transform:rotate(45deg); transition:transform .2s ease;
+}
+.exemple .repli[open] summary::after{transform:rotate(225deg); top:11px}
+.exemple .repli summary:focus-visible{outline:2px solid var(--encre); outline-offset:4px; border-radius:4px}
+.exemple .repli-corps{padding-top:4px}
 .exemple .src{margin-top:14px; font-size:14.5px; color:var(--faible)}
 .exemple .src a{color:var(--encre); text-decoration:underline; text-underline-offset:3px}
 .exemple .note{margin-top:18px; font-size:13.5px; color:var(--faible)}
 
-/* Comment ça marche : trois étapes numérotées. */
-.etapes{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:26px;
-  max-width:940px; margin:48px auto 0; text-align:left; counter-reset:etape;
-}
-@media(max-width:760px){ .etapes{grid-template-columns:1fr; gap:24px} }
-.etapes li{list-style:none; counter-increment:etape}
-.etapes li::before{
-  content:counter(etape); display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px; border-radius:50%;
-  border:1px solid var(--trait-fort); color:var(--encre);
-  font-family:var(--serif); font-size:16px; margin-bottom:12px;
-}
-.etapes h3{margin-bottom:8px}
-.etapes p{font-size:15.5px; color:var(--faible)}
-
 /* Catégories : liste sémantique, quatre visibles puis révélation. */
 ul.categories{list-style:none; padding:0}
-.cat-cache{display:none}
-.categories.tout .cat-cache{display:flex}
+/* Sans JavaScript, ou si le composant n'a pas fini son initialisation, les
+   treize catégories sont visibles et le bouton n'existe pas. */
+.categories.repliable .cat-cache{display:none}
+.categories.repliable.tout .cat-cache{display:flex}
+.plus-cat{display:none}
+.categories.repliable + .plus-cat{display:inline-flex}
 .plus-cat{
-  display:inline-flex; align-items:center; gap:8px; margin:26px auto 0;
+  align-items:center; gap:8px; margin:26px auto 0;
   background:none; border:1px solid var(--trait-fort); border-radius:13px;
   color:var(--encre); font:inherit; font-size:16px; font-weight:600;
   padding:13px 24px; min-height:44px; cursor:pointer;
@@ -587,7 +600,18 @@ ul.categories{list-style:none; padding:0}
 
 /* Sans JavaScript les fleches ne peuvent rien faire defiler : on les retire,
    le glissement au doigt et le defilement au clavier restent disponibles. */
-html:not(.js) .fleches{display:none}
+html:not(.js) .fleches,
+html:not(.js) .compteur,
+html:not(.js) .burger,
+html:not(.js) .bascule{display:none}
+/* Sans JavaScript, sous 760 px, les liens de navigation reprennent leur place
+   dans la barre et le bouton de téléchargement cède la sienne : il reste en
+   tête de page et dans le pied. */
+@media(max-width:760px){
+  html:not(.js) .barre nav .lien-nav{display:inline-block}
+  html:not(.js) .barre nav .cta{display:none}
+  html:not(.js) .barre nav{gap:12px}
+}
 /* Piste entierement visible : ni fleches ni compteur. */
 .galerie.fixe .fleches,
 .galerie.fixe .compteur{display:none}

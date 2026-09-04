@@ -64,7 +64,7 @@
       <a class="lien-nav" href="/#methode">Méthode</a>
       <a class="lien-nav" href="/#tarifs">Tarifs</a>
       <a class="lien-nav" href="/#questions">FAQ</a>
-      <a class="cta" href="/#obtenir">Essayer gratuitement</a>
+      <a class="cta" href="/#obtenir">Télécharger gratuitement</a>
       <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
         <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
         <svg class="lune" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4A8.2 8.2 0 0 1 9.6 3.5a8.2 8.2 0 1 0 10.9 10.9z"/></svg>
@@ -84,7 +84,7 @@
   <a href="/#tarifs">Tarifs</a>
   <a href="/#questions">FAQ</a>
   <a href="/a-propos">À propos</a>
-  <a class="menu-cta" href="/#obtenir">Essayer gratuitement</a>
+  <a class="menu-cta" href="/#obtenir">Télécharger gratuitement</a>
 </div>
 
 <main id="contenu" tabindex="-1">
@@ -93,7 +93,8 @@
   <div class="hero-grille">
     <div>
       <img class="hero-emblem" src="/emblem.svg" alt="" width="62" height="62">
-      <h1><span class="l">Une découverte culturelle par jour.</span> <span class="l">Une minute pour la retenir.</span></h1>
+      <p class="sur-titre hero-sur">Application pour iPhone et Android</p>
+      <h1>Une découverte culturelle par jour, à&nbsp;lire en une minute.</h1>
       <p class="sous">Chaque fiche va à l'essentiel et dit d'où elle vient.</p>
       <ul class="preuves">
         <li>5&nbsp;052 fiches</li>
@@ -101,7 +102,7 @@
         <li>Sans compte ni publicité</li>
       </ul>
       <div class="actions">
-        <a class="bouton" data-boutique href="/#obtenir" data-plausible-event-name="hero-obtenir">Essayer gratuitement</a>
+        <a class="bouton" data-boutique href="/#obtenir" data-plausible-event-name="hero-obtenir">Télécharger gratuitement</a>
         <a class="bouton creux" href="#exemple" data-plausible-event-name="voir-fiche">Voir une fiche</a>
       </div>
       <p class="fin">Le Mot Oublié est gratuit et sans limite. Les autres catégories s'achètent une fois, sans abonnement.</p>
@@ -127,74 +128,47 @@
       <b>Exemple</b>
       <p>Siméon le Stylite passa trente-sept années au sommet de sa colonne syrienne.</p>
     </div>
-    <p class="repli">En savoir plus</p>
-    <p class="src">Source&nbsp;: <a href="https://www.cnrtl.fr/definition/stylite" target="_blank" rel="noopener" class="ext" data-plausible-event-name="exemple-source">CNRTL</a></p>
-    <p class="note">Fiche réelle de l'application. Le repli «&nbsp;En savoir plus&nbsp;» contient l'étymologie et les métadonnées, la ligne Source ouvre le document consulté.</p>
+    <details class="repli">
+      <summary>En savoir plus</summary>
+      <div class="repli-corps">
+        <p class="src">Source&nbsp;: <a href="https://www.cnrtl.fr/definition/stylite" target="_blank" rel="noopener" class="ext" data-plausible-event-name="exemple-source">CNRTL</a></p>
+        <p class="note">L'approfondissement de cette fiche se lit dans l'application.</p>
+      </div>
+    </details>
+    <p class="note">Fiche réelle de l'application, présentée telle qu'elle s'y affiche.</p>
   </article>
-</section>
-
-<section class="bande">
-  <div class="centre">
-    <div class="filet"></div>
-    <h2 class="anim">Comment ça marche.</h2>
-    <ol class="etapes anim">
-      <li>
-        <h3>Ouvrir</h3>
-        <p>La découverte du jour est déjà là quand vous ouvrez l'application. Pas de compte, pas de fil à faire défiler.</p>
-      </li>
-      <li>
-        <h3>Lire</h3>
-        <p>Une minute suffit&nbsp;: un titre, une définition, un exemple.</p>
-      </li>
-      <li>
-        <h3>Approfondir</h3>
-        <p>Si le sujet vous retient, le repli ouvre l'approfondissement et la source. Vous pouvez aussi vous arrêter à la définition.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="bande claire">
-  <div class="centre">
-    <div class="filet"></div>
-    <h2 class="anim">Trois écrans.</h2>
-    <p class="sous anim">L'accueil, la fiche, la recherche. Captures prises sur iPhone. Le contenu et les principales fonctions sont les mêmes sur Android.</p>
-  </div>
-
-  <div class="galerie">
-    <section class="piste" tabindex="0" aria-label="Trois écrans de l'application">
-      <figure class="vue zoom">
-        <div class="tel"><img src="/captures/ios-accueil.webp" alt="Écran Accueil" loading="lazy" width="750" height="1630"></div>
-        <figcaption><b>Accueil</b>La découverte du jour, puis les catégories à explorer.</figcaption>
-      </figure>
-      <figure class="vue zoom">
-        <div class="tel"><img src="/captures/ios-fiche.webp" alt="Une fiche du Mot Oublié" loading="lazy" width="750" height="1630"></div>
-        <figcaption><b>La fiche</b>Un titre, une définition, un exemple. Le reste attend dans le repli.</figcaption>
-      </figure>
-      <figure class="vue zoom">
-        <div class="tel"><img src="/captures/ios-recherche.webp" alt="Écran de recherche, résultats groupés par catégorie" loading="lazy" width="750" height="1630"></div>
-        <figcaption><b>Recherche</b>Un mot, et toutes les fiches qui le contiennent.</figcaption>
-      </figure>
-    </section>
-    <p class="compteur" role="status" aria-live="polite">1 sur 3</p>
-    <div class="fleches">
-      <button class="fleche prec" type="button" aria-label="Voir l'écran précédent">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button class="fleche suiv" type="button" aria-label="Voir l'écran suivant">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </button>
-    </div>
-  </div>
-
   <div class="centre">
     <div class="actions anim">
-      <a class="bouton creux" href="/decouvrir" data-plausible-event-name="voir-app">Parcourir l'application écran par écran</a>
+      <a class="bouton creux" href="/decouvrir" data-plausible-event-name="voir-app">Voir l'application écran par écran</a>
     </div>
   </div>
 </section>
 
-<section class="bande" id="methode">
+<section class="bande" id="categories">
+  <div class="centre">
+    <div class="filet"></div>
+    <h2 class="anim">Treize catégories.</h2>
+    <p class="sous anim">Une seule est gratuite et sans limite. Les douze autres offrent chacune dix découvertes avant l'achat.</p>
+    <ul class="categories" id="liste-cat">
+      <li class="cat libre anim" style="--cat-clair:#5B6440; --cat-sombre:#616B44"><span class="pastille"></span><div><b>Le Mot Oublié</b><span>Un mot rare ou tombé en désuétude, et sa définition.</span><i>Gratuit, sans limite</i></div></li>
+      <li class="cat anim" style="--cat-clair:#73302A; --cat-sombre:#AA473E"><span class="pastille"></span><div><b>L'Idée Reçue</b><span>Une croyance répandue confrontée aux sources.</span></div></li>
+      <li class="cat anim" style="--cat-clair:#1F283E; --cat-sombre:#4F669B"><span class="pastille"></span><div><b>Ce jour-là</b><span>Un événement marquant survenu à cette date précise, à travers l'histoire.</span></div></li>
+      <li class="cat anim" style="--cat-clair:#58395A; --cat-sombre:#845688"><span class="pastille"></span><div><b>Le Biais Cognitif</b><span>Un travers de raisonnement décortiqué, pour mieux le repérer chez soi.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#26665F; --cat-sombre:#2A726A"><span class="pastille"></span><div><b>La Vérité Surprenante</b><span>Un fait solidement documenté, et pourtant contre-intuitif au point de surprendre.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#945226; --cat-sombre:#995527"><span class="pastille"></span><div><b>Le Pourquoi du Comment</b><span>L'origine ou le mécanisme caché d'une chose banale du quotidien.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#394273; --cat-sombre:#5561AA"><span class="pastille"></span><div><b>L'Effet Papillon</b><span>Comment une cause minuscule a fini par entraîner une immense conséquence.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#3D4A62; --cat-sombre:#546789"><span class="pastille"></span><div><b>L'Uchronie Quotidienne</b><span>Et si l'histoire avait bifurqué&nbsp;? Un scénario alternatif déroulé pas à pas, assumé comme une fiction.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#714A31; --cat-sombre:#8C5B3D"><span class="pastille"></span><div><b>L'Objet d'Antan</b><span>Un objet du passé, son usage oublié et la petite histoire qui va avec.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#275B4A; --cat-sombre:#30725C"><span class="pastille"></span><div><b>Le Monde Parallèle</b><span>Une coutume, une espèce ou une réalité imaginées de toutes pièces, signalées comme fiction.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#5A3043; --cat-sombre:#974F70"><span class="pastille"></span><div><b>La Coutume Décodée</b><span>L'histoire et les significations d'une coutume que l'on perpétue sans toujours savoir pourquoi.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#33585A; --cat-sombre:#3F6D71"><span class="pastille"></span><div><b>La Fausse Bonne Idée</b><span>Une idée séduisante en apparence, dont l'histoire a montré les revers.</span></div></li>
+      <li class="cat anim cat-cache" style="--cat-clair:#393058; --cat-sombre:#6D5BA6"><span class="pastille"></span><div><b>Le Récit Rocambolesque</b><span>Une histoire vraie si invraisemblable qu'on la croirait inventée, en format long.</span></div></li>
+    </ul>
+    <button class="plus-cat" type="button" aria-expanded="false" aria-controls="liste-cat"><span>Voir les treize catégories</span></button>
+  </div>
+</section>
+
+<section class="bande claire" id="methode">
   <div class="centre">
     <div class="filet"></div>
     <h2 class="anim">Comment les sources sont indiquées.</h2>
@@ -219,30 +193,6 @@
         <p>Chaque fiche porte un bouton «&nbsp;Signaler une coquille&nbsp;». Les signalements sont lus, et les corrections arrivent avec les mises à jour.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="bande claire" id="categories">
-  <div class="centre">
-    <div class="filet"></div>
-    <h2 class="anim">Treize catégories.</h2>
-    <p class="sous anim">Une seule est gratuite et sans limite. Les douze autres offrent chacune dix découvertes avant l'achat.</p>
-    <ul class="categories" id="liste-cat">
-      <li class="cat libre anim" style="--cat-clair:#5B6440; --cat-sombre:#616B44"><span class="pastille"></span><div><b>Le Mot Oublié</b><span>Un mot rare ou tombé en désuétude, et sa définition.</span><i>Gratuit, sans limite</i></div></li>
-      <li class="cat anim" style="--cat-clair:#73302A; --cat-sombre:#AA473E"><span class="pastille"></span><div><b>L'Idée Reçue</b><span>Une croyance répandue passée au crible, pour révéler le vrai derrière le mythe.</span></div></li>
-      <li class="cat anim" style="--cat-clair:#1F283E; --cat-sombre:#4F669B"><span class="pastille"></span><div><b>Ce jour-là</b><span>Un événement marquant survenu à cette date précise, à travers l'histoire.</span></div></li>
-      <li class="cat anim" style="--cat-clair:#58395A; --cat-sombre:#845688"><span class="pastille"></span><div><b>Le Biais Cognitif</b><span>Un travers de raisonnement décortiqué, pour mieux le repérer chez soi.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#26665F; --cat-sombre:#2A726A"><span class="pastille"></span><div><b>La Vérité Surprenante</b><span>Un fait solidement documenté, et pourtant contre-intuitif au point de surprendre.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#945226; --cat-sombre:#995527"><span class="pastille"></span><div><b>Le Pourquoi du Comment</b><span>L'origine ou le mécanisme caché d'une chose banale du quotidien.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#394273; --cat-sombre:#5561AA"><span class="pastille"></span><div><b>L'Effet Papillon</b><span>Comment une cause minuscule a fini par entraîner une immense conséquence.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#3D4A62; --cat-sombre:#546789"><span class="pastille"></span><div><b>L'Uchronie Quotidienne</b><span>Et si l'histoire avait bifurqué&nbsp;? Un scénario alternatif déroulé pas à pas, assumé comme une fiction.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#714A31; --cat-sombre:#8C5B3D"><span class="pastille"></span><div><b>L'Objet d'Antan</b><span>Un objet du passé, son usage oublié et la petite histoire qui va avec.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#275B4A; --cat-sombre:#30725C"><span class="pastille"></span><div><b>Le Monde Parallèle</b><span>Une coutume, une espèce ou une réalité imaginées de toutes pièces, signalées comme fiction.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#5A3043; --cat-sombre:#974F70"><span class="pastille"></span><div><b>La Coutume Décodée</b><span>L'origine et le sens réels d'un rite que l'on perpétue sans savoir pourquoi.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#33585A; --cat-sombre:#3F6D71"><span class="pastille"></span><div><b>La Fausse Bonne Idée</b><span>Une idée séduisante en apparence, dont l'histoire a montré les revers.</span></div></li>
-      <li class="cat anim cat-cache" style="--cat-clair:#393058; --cat-sombre:#6D5BA6"><span class="pastille"></span><div><b>Le Récit Rocambolesque</b><span>Une histoire vraie si invraisemblable qu'on la croirait inventée, en format long.</span></div></li>
-    </ul>
-    <button class="plus-cat" type="button" aria-expanded="false" aria-controls="liste-cat"><span>Voir les treize catégories</span></button>
   </div>
 </section>
 
