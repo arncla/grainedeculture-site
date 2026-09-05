@@ -386,6 +386,15 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 
 /* Hero */
 .hero{padding-top:clamp(36px,5vw,62px); padding-bottom:clamp(56px,7vw,86px)}
+/* Sur grand ecran le contenu du hero (environ 710 px) flottait en haut d'une
+   fenetre bien plus haute, laissant voir une large bande vide de la section
+   suivante. Hauteur minimale relative a la fenetre, plafonnee pour ne pas
+   etirer a l'absurde, et contenu centre. La lisiere qui reste sous le hero est
+   voulue : elle signale qu'il y a une suite. */
+@media(min-width:901px){
+  .hero{min-height:min(86svh,880px); display:flex; align-items:center}
+  .hero-grille{width:100%}
+}
 .hero-grille{
   display:grid; grid-template-columns:1.32fr .68fr;
   gap:clamp(30px,5vw,66px); align-items:center;
