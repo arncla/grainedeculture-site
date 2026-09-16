@@ -11,7 +11,7 @@
     try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
     if(choix === 'dark'){
       document.documentElement.setAttribute('data-theme', 'dark');
-      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+      document.getElementById('theme-color').setAttribute('content', '#16130E');
     }
   })();
 </script>
@@ -64,6 +64,7 @@
       <a class="lien-nav" href="/#methode">Méthode</a>
       <a class="lien-nav" href="/#tarifs">Tarifs</a>
       <a class="lien-nav" href="/#questions">FAQ</a>
+      <a class="lien-nav" href="/a-propos">À propos</a>
       <a class="cta" href="/#obtenir">Télécharger gratuitement</a>
       <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
         <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
@@ -95,7 +96,6 @@
       <img class="hero-emblem" src="/emblem.svg" alt="" width="62" height="62">
       <p class="sur-titre hero-sur">Application pour iPhone et Android</p>
       <h1>Une découverte culturelle par jour, à&nbsp;lire en une minute.</h1>
-      <p class="sous">Chaque fiche va à l'essentiel et dit d'où elle vient.</p>
       <ul class="preuves">
         <li>5&nbsp;052 fiches</li>
         <li>13 catégories</li>
@@ -113,9 +113,8 @@
   </div>
 </section>
 
-<section class="bande claire" id="exemple">
+<section class="bande" id="exemple">
   <div class="centre">
-    <div class="filet"></div>
     <h2 class="anim">Voici une fiche.</h2>
     <p class="sous anim">Celle du jour s'affiche à l'ouverture de l'application, dans la catégorie de votre choix. Toutes les fiches commencent par ce format court.</p>
   </div>
@@ -147,7 +146,6 @@
 
 <section class="bande" id="categories">
   <div class="centre">
-    <div class="filet"></div>
     <h2 class="anim">Treize catégories.</h2>
     <p class="sous anim">Une seule est gratuite et sans limite. Les douze autres offrent chacune dix découvertes avant l'achat.</p>
     <ul class="categories" id="liste-cat">
@@ -169,9 +167,8 @@
   </div>
 </section>
 
-<section class="bande claire" id="methode">
+<section class="bande" id="methode">
   <div class="centre">
-    <div class="filet"></div>
     <h2 class="anim">Comment les sources sont indiquées.</h2>
     <p class="sous anim">Quand une source vérifiable existe, elle est citée et cliquable. Les fictions se présentent comme telles, et les fiches sans source en ligne le signalent.</p>
     <div class="colonnes">
@@ -199,7 +196,6 @@
 
 <section class="bande" id="tarifs">
   <div class="centre">
-    <div class="filet"></div>
     <h2 class="anim">Un achat unique, sans abonnement.</h2>
     <p class="sous anim">Le Mot Oublié est gratuit et sans limite. Chaque autre catégorie s'ouvre pour 1,50&nbsp;CHF, une fois, définitivement. L'offre groupée réunit les treize catégories, présentes et à venir, pour 6,00&nbsp;CHF.</p>
     <div class="colonnes">
@@ -220,9 +216,8 @@
   </div>
 </section>
 
-<section class="bande claire">
+<section class="bande">
   <div class="centre">
-    <div class="filet"></div>
     <h2 class="anim">Ce que vous lisez reste chez vous.</h2>
     <p class="sous anim">Aucun compte n'est requis&nbsp;: l'application s'ouvre et fonctionne. La progression, les favoris et les rappels restent sur votre appareil et ne remontent pas au développeur. Aucun outil de suivi publicitaire, aucune analyse comportementale.</p>
     <div class="actions anim">
@@ -233,7 +228,6 @@
 
 <section class="bande" id="questions">
   <div class="centre">
-    <div class="filet"></div>
     <h2 class="anim">Questions fréquentes.</h2>
     <div class="faq">
       <details class="anim">
@@ -270,7 +264,7 @@
   </div>
 </section>
 
-<section class="bande claire courte" id="obtenir">
+<section class="bande nuit courte" id="obtenir">
   <div class="centre">
     <img class="hero-emblem anim centre-bloc" src="/emblem.svg" alt="" width="62" height="62">
     <h2 class="anim">Une graine, aujourd'hui.</h2>

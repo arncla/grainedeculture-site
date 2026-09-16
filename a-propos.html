@@ -11,7 +11,7 @@
     try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
     if(choix === 'dark'){
       document.documentElement.setAttribute('data-theme', 'dark');
-      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+      document.getElementById('theme-color').setAttribute('content', '#16130E');
     }
   })();
 </script>
@@ -96,6 +96,7 @@
       <a class="lien-nav" href="/#methode">Méthode</a>
       <a class="lien-nav" href="/#tarifs">Tarifs</a>
       <a class="lien-nav" href="/#questions">FAQ</a>
+      <a class="lien-nav" href="/a-propos" aria-current="page">À propos</a>
       <a class="cta" href="/#obtenir">Télécharger gratuitement</a>
       <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
         <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
@@ -120,7 +121,6 @@
 </div>
 
 <main class="page" id="contenu" tabindex="-1">
-  <div class="filet gauche"></div>
   <picture>
     <source srcset="/arnaud-clavien.webp" type="image/webp">
     <img class="portrait" src="/arnaud-clavien.jpg" width="132" height="132" loading="lazy"

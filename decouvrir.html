@@ -11,7 +11,7 @@
     try{ choix = localStorage.getItem('gdc-theme'); }catch(e){}
     if(choix === 'dark'){
       document.documentElement.setAttribute('data-theme', 'dark');
-      document.getElementById('theme-color').setAttribute('content', '#0D0F13');
+      document.getElementById('theme-color').setAttribute('content', '#16130E');
     }
   })();
 </script>
@@ -57,6 +57,7 @@
       <a class="lien-nav" href="/#methode">Méthode</a>
       <a class="lien-nav" href="/#tarifs">Tarifs</a>
       <a class="lien-nav" href="/#questions">FAQ</a>
+      <a class="lien-nav" href="/a-propos">À propos</a>
       <a class="cta" href="/#obtenir">Télécharger gratuitement</a>
       <button class="bascule" type="button" aria-label="Basculer le thème clair ou sombre">
         <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
@@ -84,13 +85,12 @@
 
 <section class="bande courte">
   <div class="centre">
-    <div class="filet"></div>
     <h1 class="anim titre-moyen">Écran par écran.</h1>
     <p class="sous anim d1">Voici l'application, telle qu'elle est. Captures prises sur iPhone. Le contenu et les principales fonctions sont les mêmes sur Android.</p>
   </div>
 </section>
 
-<section class="bande claire courte">
+<section class="bande courte">
   <div class="centre">
     <h2 class="anim">Le premier lancement.</h2>
     <p class="sous anim d1">Deux écrans, pas de questionnaire, pas de compte. On annonce ce que fait l'application, et d'où viennent ses contenus.</p>
@@ -114,7 +114,7 @@
   </div>
 </section>
 
-<section class="bande claire">
+<section class="bande">
   <div class="centre">
     <h2 class="anim">La fiche.</h2>
     <p class="sous anim d1">Un titre, une définition courte, un exemple. Un appui sur «&nbsp;En savoir plus&nbsp;» ouvre l'approfondissement et la source.</p>
@@ -167,7 +167,7 @@
   </div>
 </section>
 
-<section class="bande claire courte">
+<section class="bande courte">
   <div class="centre">
     <h2 class="anim">Garder, et retrouver.</h2>
     <p class="sous anim d1">Une étoile met la fiche de côté. Les favoris se rangent par catégorie, et l'historique garde la trace de ce que vous avez déjà vu.</p>

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
       var suivant = racine.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       racine.setAttribute('data-theme', suivant);
       var meta = document.querySelector('meta[name="theme-color"]');
-      if(meta){ meta.setAttribute('content', suivant === 'light' ? '#F0E9D8' : '#0D0F13'); }
+      if(meta){ meta.setAttribute('content', suivant === 'light' ? '#F0E9D8' : '#16130E'); }
       try{ localStorage.setItem('gdc-theme', suivant); }catch(e){}
       libelle();
     });
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function(){
       if(e.target.closest('a')){ fermer(false); }
     });
     // Les liens de la barre restent cliquables menu ouvert (logo, bouton
-    // d'essai entre 421 et 760 px) : eux aussi referment le panneau, sinon
+    // d'essai entre 421 et 860 px) : eux aussi referment le panneau, sinon
     // la page resterait inerte et bloquee derriere le menu.
     var barreIn = document.querySelector('.barre-in');
     if(barreIn){
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function(){
       else if(!e.shiftKey && document.activeElement === dernier){ e.preventDefault(); premier.focus(); }
     });
     window.addEventListener('resize', function(){
-      if(window.innerWidth > 760 && burger.getAttribute('aria-expanded') === 'true'){ fermer(false); }
+      if(window.innerWidth > 860 && burger.getAttribute('aria-expanded') === 'true'){ fermer(false); }
     });
   }
 
