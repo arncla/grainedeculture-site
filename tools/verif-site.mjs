@@ -344,6 +344,42 @@ for (const pg of ['', 'decouvrir', 'a-propos', 'confidentialite', 'cgu', '404'])
   await ctx.close();
 }
 
+// 5 duodecies. Un seul bord gauche par page : logo de la barre, premier titre,
+// fiche exemple, premiere vue de la galerie, texte des pages longues, 404 et
+// pied de page partent du meme pixel, et le bord droit de la barre est celui
+// de la capture du hero. Mesure a trois largeurs, sur les six pages.
+{
+  const cibles = ['.logo img', 'main h1', 'main h2', '.exemple', '.vue', '.page p', '.fil', '.liens', '.portrait', '.err h1', '.fleches', 'footer .pied'];
+  for (const w of [1440, 1024, 390]) {
+    const ctx = await b.newContext({ viewport: { width: w, height: 900 }, reducedMotion: 'reduce' });
+    const p = await ctx.newPage();
+    const ecarts = [];
+    for (const pg of ['', 'decouvrir', 'a-propos', 'confidentialite', 'cgu', '404']) {
+      await p.goto(`http://localhost:8099/${pg}`, { waitUntil: 'networkidle' });
+      const r = await p.evaluate((cibles) => {
+        const vw = document.documentElement.clientWidth;
+        const gauche = Math.round(document.querySelector('.logo img').getBoundingClientRect().left);
+        const mauvais = [];
+        for (const s of cibles) {
+          const el = [...document.querySelectorAll(s)].find(e => e.getBoundingClientRect().width > 0);
+          if (!el) continue;
+          const l = Math.round(el.getBoundingClientRect().left);
+          if (l !== gauche) mauvais.push(`${s}=${l}`);
+        }
+        const nav = document.querySelector('.barre nav').getBoundingClientRect().right;
+        if (Math.abs(nav - (vw - gauche)) > 1) mauvais.push(`barre droite=${Math.round(nav)} attendu=${vw - gauche}`);
+        const tel = document.querySelector('.hero .tel');
+        const droit = tel && vw > 900 ? Math.round(tel.getBoundingClientRect().right) : null;
+        if (droit !== null && Math.abs(droit - nav) > 1) mauvais.push(`hero .tel droite=${droit} barre=${Math.round(nav)}`);
+        return { gauche, mauvais };
+      }, cibles);
+      if (r.mauvais.length) ecarts.push(`${pg || 'accueil'} (bord ${r.gauche}) : ${r.mauvais.join(', ')}`);
+    }
+    ok(ecarts.length === 0, `un seul bord gauche a ${w} px` + (ecarts.length ? ' : ' + ecarts.join(' | ') : ''));
+    await ctx.close();
+  }
+}
+
 // 6. Fichiers SEO et 404.
 {
   const ctx = await b.newContext();

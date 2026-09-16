@@ -154,11 +154,14 @@ p{margin:0; text-wrap:pretty}
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid var(--trait);
 }
+/* Les 22 px de marge interne sont comptes DANS la largeur maximale : pour que
+   le contenu de la barre parte du meme bord que la colonne de 1140 px (dont
+   la marge est portee par .bande, a l'exterieur), la boite fait 1140 + 44. */
 .barre-in{
-  max-width:1140px; margin:0 auto; padding:0 22px;
+  max-width:1184px; margin:0 auto; padding:0 22px;
   height:54px; display:flex; align-items:center; justify-content:space-between; gap:20px;
 }
-.logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--encre); min-height:44px; padding:4px 2px; flex:none}
+.logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--encre); min-height:44px; padding:4px 0; flex:none}
 .logo img{width:26px; height:26px}
 .logo span{font-family:var(--serif); font-weight:500; font-size:19px; letter-spacing:-.01em; white-space:nowrap}
 .barre nav{display:flex; align-items:center; gap:22px}
@@ -277,13 +280,14 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
   scrollbar-width:none;
 }
 .piste::-webkit-scrollbar{display:none}
-@media(min-width:1180px){ .piste{justify-content:safe center} }
 .vue{flex:0 0 204px; scroll-snap-align:center; margin:0}
 .vue .tel{border-radius:35px; padding:7px}
 .vue .tel img{border-radius:29px}
 .vue figcaption{margin-top:16px; font-size:14.5px; color:var(--faible); line-height:1.45}
 .vue figcaption b{display:block; color:var(--encre); font-family:var(--serif); font-weight:500; font-size:17px; margin-bottom:3px}
-.fleches{display:flex; gap:10px; justify-content:flex-end; padding:0 22px; margin-top:6px}
+/* Commandes du carrousel sur le bord gauche de la colonne, comme tout le
+   reste : les deux fleches puis le compteur, sur une ligne. */
+.fleches{display:flex; align-items:center; gap:10px; justify-content:flex-start; padding:0; margin-top:6px}
 .fleche{
   width:38px; height:38px; border-radius:50%;
   border:1px solid var(--trait); background:var(--surface); color:var(--encre);
@@ -406,7 +410,10 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 .hero-grille h1{font-size:clamp(38px,4.5vw,58px)}
 .hero .sur-titre{font-size:15px; font-weight:500; color:var(--faible); margin-bottom:14px; text-transform:none; letter-spacing:0}
 .hero-emblem{width:62px; height:62px; margin-bottom:20px}
-.hero .tel{width:min(268px,74vw); margin:0 auto}
+/* La capture s'appuie sur le bord droit de la colonne, en face des commandes
+   de la barre ; centree dans sa colonne, elle flottait de 4 a 49 px du bord
+   selon la largeur de fenetre. */
+.hero .tel{width:min(268px,74vw); margin:0 0 0 auto}
 .points{list-style:none; padding:0; margin:26px 0 0; display:grid; gap:11px}
 .points li{position:relative; padding-left:24px; font-size:16px; color:var(--corps)}
 .points li::before{
@@ -424,7 +431,12 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 }
 
 /* Pages de texte long (à propos, mentions) */
-.page{max-width:760px; margin:0 auto; padding:clamp(46px,7vw,76px) 22px clamp(56px,8vw,88px)}
+/* Meme colonne de 1140 px que le reste du site (marge interne comprise dans
+   la boite, donc 1140 + 44), et largeur de lecture de 760 px posee sur les
+   blocs eux-memes : le texte part du bord de la barre et du pied, au lieu
+   d'une colonne centree qui ne s'alignait sur rien. */
+.page{max-width:1184px; margin:0 auto; padding:clamp(46px,7vw,76px) 22px clamp(56px,8vw,88px)}
+.page > *{max-width:760px}
 .page h1{font-size:clamp(32px,5vw,46px); line-height:1.08}
 .page h2{font-size:23px; letter-spacing:-.012em; margin:38px 0 12px}
 .page p{margin:0 0 15px; max-width:68ch}
@@ -506,7 +518,7 @@ footer .sep{margin:0 9px; opacity:.5}
 }
 .menu.ouvert{display:block}
 .menu a{
-  display:block; padding:14px 2px; min-height:44px;
+  display:block; padding:14px 0; min-height:44px;
   color:var(--encre); text-decoration:none; font-size:17px; font-weight:600;
   border-bottom:1px solid var(--trait);
 }
@@ -597,12 +609,9 @@ ul.categories{list-style:none; padding:0}
 }
 .plus-cat:hover{border-color:var(--encre)}
 
-/* Carrousel : position courante annoncée, commandes visibles sur mobile. */
+/* Carrousel : position courante annoncée, à côté des flèches. */
 .compteur{
-  margin-top:10px; text-align:center; font-size:14px; color:var(--faible);
-}
-@media(max-width:640px){
-  .fleches{display:flex; justify-content:center; margin-top:14px}
+  margin:0 0 0 6px; font-size:14px; color:var(--faible);
 }
 /* Utilitaires : remplacent les styles poses en ligne. */
 .hero-emblem.centre-bloc{margin:0 0 20px}
@@ -645,7 +654,7 @@ footer .pied h2{
   text-transform:uppercase; color:var(--faible); margin-bottom:6px;
 }
 footer .pied ul{list-style:none; margin:0; padding:0}
-footer .pied a{display:inline-block; padding:8px 2px; min-height:44px; line-height:28px}
+footer .pied a{display:inline-block; padding:8px 0; min-height:44px; line-height:28px}
 footer .bas{border-top:1px solid var(--trait); padding-top:22px; max-width:1140px; margin:0 auto}
 
 /* Marqueur de lien ouvrant un nouvel onglet. */
@@ -657,5 +666,8 @@ footer .bas{border-top:1px solid var(--trait); padding-top:22px; max-width:1140p
 :root{--ico-ext:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4h6v6M20 4L9.5 14.5M17 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5'/%3E%3C/svg%3E")}
 
 /* Page 404. */
-.err{max-width:640px; margin:0 auto; text-align:center; padding:clamp(64px,12vw,140px) 22px}
+/* Sur la colonne commune, alignee a gauche comme le reste : l'embleme et les
+   boutons l'etaient deja, seul le texte restait centre. */
+.err{max-width:1184px; margin:0 auto; text-align:left; padding:clamp(64px,12vw,140px) 22px}
+.err > *{max-width:640px}
 .err h1{font-size:clamp(40px,7vw,72px)}
