@@ -431,6 +431,8 @@ for (const pg of ['', 'decouvrir', 'a-propos', 'confidentialite', 'cgu', '404'])
     ['/confidentialite', "Elles disparaissent lorsque vous"],
     ['/', "Aucune n'est plus longue"], ['/', 'identique sur Android'],
     ['/decouvrir', 'identique sur Android'],
+    // 16 septembre : la 404 ne rassure plus sur « le reste du site ».
+    ['/404', 'Le reste du site est intact'],
   ];
   for (const [u, mot] of interdits) {
     const r = await p.goto('http://localhost:8099' + u);
