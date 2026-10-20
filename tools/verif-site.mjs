@@ -460,7 +460,7 @@ for (const pg of ['', 'decouvrir', 'a-propos', 'confidentialite', 'cgu', '404'])
   ok(t.replace(/&nbsp;/g, ' ').includes('Une découverte culturelle par jour, à lire en une minute.'), 'titre sur la lecture');
   ok(tc.includes('Courriels adressés au développeur'), 'courriels au support décrits dans la politique');
   ok((t.match(/Wikipédia/g) || []).length >= 2, 'Wikipédia nommée dans la méthode et dans la FAQ');
-  ok(t.includes('Trente-huit fiches restent en texte seul'), 'nombre exact de fiches sans source');
+  ok(t.includes('Vingt-trois fiches nomment leur source'), 'nombre exact de fiches sans lien');
   ok(t.includes("Nous n'avons pas trouvé de source en ligne vérifiable") && t.includes('Récit original imaginé pour Graine de Culture'),
      "libellés de l'application cités verbatim");
   ok(t.includes('stylitês') && t.includes('Trévoux'), 'repli de la fiche exemple rempli avec le corpus réel');
