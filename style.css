@@ -450,6 +450,8 @@ h3{font-size:20px; letter-spacing:-.012em; line-height:1.25}
 .liens a{display:flex; align-items:center; gap:13px; padding:15px 18px; color:var(--encre); text-decoration:none; font-weight:600; font-size:15.5px}
 .liens a:hover{background:var(--surface2)}
 .liens .fleche-l{margin-left:auto; color:var(--faible)}
+.page .liens{padding-left:0}
+.page .liens li{margin-bottom:0}
 
 footer{background:var(--surface); border-top:1px solid var(--trait); color:var(--faible); padding:48px 22px 56px; text-align:left; font-size:14px}
 footer nav{margin-top:8px; font-size:13.5px}
