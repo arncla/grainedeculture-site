@@ -492,6 +492,31 @@ for (const pg of ['', 'decouvrir', 'a-propos', 'confidentialite', 'cgu', '404'])
   ok(contenus['a-propos.html'].includes('content="summary"'), 'carte X de la page À propos au format simple');
 }
 
+// 9. Chiffres annonces : une seule valeur par fait, sur les six pages et dans les
+// donnees structurees. Seul endroit de la suite a modifier quand un chiffre bouge
+// (montee de prix du cliquet, vague de contenu ou de categories).
+{
+  const fs = await import('fs');
+  const ATTENDU = { unite: '1,50', bundle: '6,00', fiches: '5 052', categories: '13' };
+  const pages = ['index.html','decouvrir.html','a-propos.html','confidentialite.html','cgu.html','404.html'];
+  const norm = s => s.replace(/&nbsp;|&#160;|&#xa0;/gi, ' ').replace(/[  ]/g, ' ');
+  const tout = pages.map(f => norm(fs.readFileSync(root + '/' + f, 'utf8'))).join('\n');
+  const prix = [...tout.matchAll(/(\d+[,.]\d{2}) ?CHF/g)].map(m => m[1]);
+  const autres = prix.filter(p => p !== ATTENDU.unite && p !== ATTENDU.bundle);
+  ok(prix.includes(ATTENDU.unite) && prix.includes(ATTENDU.bundle) && autres.length === 0,
+     `prix en CHF : seulement ${ATTENDU.unite} et ${ATTENDU.bundle} (${prix.join(' ; ')})`);
+  const index = norm(fs.readFileSync(root + '/index.html', 'utf8'));
+  const ld = JSON.parse(index.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const ldPrix = (ld.offers || []).map(o => o.price);
+  const ldAttendu = ['0', ATTENDU.unite.replace(',', '.'), ATTENDU.bundle.replace(',', '.')];
+  ok(JSON.stringify(ldPrix) === JSON.stringify(ldAttendu), `prix des donnees structurees (${ldPrix.join(' ; ')})`);
+  const fiches = [...tout.matchAll(/\b(\d{1,3}(?: \d{3})+|\d{4,}) fiches/g)].map(m => m[1]);
+  ok(fiches.length > 0 && fiches.every(n => n === ATTENDU.fiches), `nombre de fiches : ${ATTENDU.fiches} partout (${fiches.join(' ; ')})`);
+  const cats = [...tout.matchAll(/\b(\d+) catégories/g)].map(m => m[1]);
+  const cartes = (index.match(/class="cat[ "]/g) || []).length;
+  ok(cats.length > 0 && cats.every(n => n === ATTENDU.categories) && String(cartes) === ATTENDU.categories,
+     `nombre de catégories : ${ATTENDU.categories} partout (${cats.join(' ; ')}, ${cartes} cartes)`);
+}
 await b.close();
 server.close();
 console.log(echecs === 0 ? '\nTOUT PASSE' : `\n${echecs} ECHEC(S)`);
